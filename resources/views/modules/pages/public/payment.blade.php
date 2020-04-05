@@ -29,6 +29,11 @@
                                                 {{--  <span><i class="fa fa-clock-o"></i>{!! $item->present()->duration !!}</span>  --}}
                                             </div>
                                             <span class="price">{{config('myapp.currency','$').$item->present()->amount}}</span>
+                                            <div class="button payment-button" style="margin-top:20px;">
+                                                <button type="submit" class="btn payment-btn">Pay
+                                                    ${!! $item->present()->amount !!}</button>
+                                            </div>
+                                            <div id="paypal-button-container"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -58,12 +63,10 @@
     <script>
         var TOKEN = "{{csrf_token()}}";
         var CHECKOUT_URL = "{{route('checkout.post')}}";
-        var STRIPE_KEY = "{{ config('myapp.stripe_publish_key',env('STRIPE_KEY')) }}";
         var locationRoute = "";
     </script>
-    <script src="https://js.stripe.com/v3/"></script>
     <script src="https://www.paypal.com/sdk/js?client-id={{config('myapp.paypal_client_id',env('PAYPAL_CLIENT_ID'))}}"></script>
-    <script src="{{ asset('assets/public/js/pages/stripe.js') }}"></script>
     <script src="{{ asset('assets/public/js/pages/paypal.js') }}"></script>
+    <script src="{{ asset('assets/public/js/pages/paystack.js') }}"></script>
 @stop
 @endsection
