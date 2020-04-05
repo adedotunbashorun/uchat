@@ -18,6 +18,8 @@ class CreateCategoriesTable extends Migration
             $table->string('title');
             $table->text('body')->nullable();
             $table->double('amount', 10, 2);
+            $table->text('image')->nullable();
+            $table->integer('limit')->nullable();
             $table->boolean('status')->default(true);
             $table->timestamps();
         });

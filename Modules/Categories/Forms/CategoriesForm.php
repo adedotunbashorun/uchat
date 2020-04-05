@@ -11,6 +11,8 @@ class CategoriesForm extends Form
         $this
             ->add('title', 'text')
             ->add('amount', 'text')
+            ->add('image', 'file')
+            ->add('limit', 'number')
             ->add('body', 'textarea',[
                 'attr'=>['class'=>'form-control summernote']
             ]);

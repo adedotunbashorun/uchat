@@ -38,8 +38,8 @@ class CategoriesServiceProvider extends ServiceProvider
             'Modules\Categories\Facades\Facade'
         );
 
-        /*Category::observe(new SlugObserver());
-        Category::observe(new FileObserver());*/
+        // Category::observe(new SlugObserver());
+        Category::observe(new FileObserver());
 
     }
 

@@ -36,7 +36,7 @@ class FileUpload
         $input['filename']  = $fileName . $input['extension'];
 
         $fileTypes = Config::get('lfm.file_type_array');
-        $input['type'] = $fileTypes[strtolower($file->getClientOriginalExtension())];
+        // $input['type'] = $fileTypes[strtolower($file->getClientOriginalExtension())];
         try {
             $input['type'] = $fileTypes[strtolower($file->getClientOriginalExtension())];
         } catch (Exception $e) {
