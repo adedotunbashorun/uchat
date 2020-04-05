@@ -1,0 +1,25 @@
+{
+    "name": "adedolapoo/banners",
+    "description": "",
+    "authors": [
+        {
+            "name": "Adedolapo Oduguwa",
+            "email": "adedolapoo@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Modules\\Banners\\Providers\\BannersServiceProvider"
+            ],
+            "aliases": {
+                
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Banners\\": ""
+        }
+    }
+}

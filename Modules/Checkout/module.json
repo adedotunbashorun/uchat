@@ -1,0 +1,17 @@
+{
+    "name": "Checkout",
+    "alias": "checkout",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "Modules\\Checkout\\Providers\\RouteServiceProvider",
+        "Modules\\Checkout\\Providers\\CheckoutServiceProvider"
+    ],
+    "aliases": {},
+    "files": [
+        "start.php"
+    ],
+    "requires": []
+}

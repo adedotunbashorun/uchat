@@ -1,0 +1,23 @@
+.kt-aside__brand-logo a {
+    color: #fff;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 15px;
+}
+.kt-aside__brand-logo a:hover{
+    text-decoration: underline;
+}
+
+.kt-login.kt-login--v3 .kt-login__wrapper .kt-login__container .kt-login__logo {
+    text-align: center;
+    margin: 0 auto 2rem auto;
+}
+
+.kt-login.kt-login--v3 .kt-login__wrapper .kt-login__container .kt-login__head {
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.kt-login__logo img{
+    width: 250px;
+}

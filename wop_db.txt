@@ -1,0 +1,656 @@
+-- --------------------------------------------------------
+-- Host:                         127.0.0.1
+-- Server version:               10.2.14-MariaDB-log - mariadb.org binary distribution
+-- Server OS:                    Win64
+-- HeidiSQL Version:             9.3.0.4984
+-- --------------------------------------------------------
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET NAMES utf8mb4 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+
+-- Dumping structure for table wop_db.activations
+CREATE TABLE IF NOT EXISTS `activations` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `user_id` int(10) unsigned NOT NULL,
+  `code` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `completed` tinyint(1) NOT NULL DEFAULT 0,
+  `completed_at` timestamp NULL DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Dumping data for table wop_db.activations: ~2 rows (approximately)
+/*!40000 ALTER TABLE `activations` DISABLE KEYS */;
+INSERT INTO `activations` (`id`, `user_id`, `code`, `completed`, `completed_at`, `created_at`, `updated_at`) VALUES
+	(1, 1, 'gsE3r34bbYNYtg8X1kPV61njXr9oZwP8', 1, '2019-01-20 19:03:33', '2019-01-20 19:03:33', '2019-01-20 19:03:33'),
+	(2, 2, 'LWry63nwK3NganMcEIy0MZkFLKNTpL88', 1, '2019-09-18 09:48:13', '2019-09-18 09:48:13', '2019-09-18 09:48:13'),
+	(3, 3, '60B3Egveaa90qzkSSVqFkvqtUqYYv61Q', 1, '2019-10-07 11:48:06', '2019-10-07 11:48:06', '2019-10-07 11:48:06');
+/*!40000 ALTER TABLE `activations` ENABLE KEYS */;
+
+
+-- Dumping structure for table wop_db.albums
+CREATE TABLE IF NOT EXISTS `albums` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `slug` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` tinyint(1) NOT NULL DEFAULT 1,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Dumping data for table wop_db.albums: ~1 rows (approximately)
+/*!40000 ALTER TABLE `albums` DISABLE KEYS */;
+INSERT INTO `albums` (`id`, `title`, `slug`, `image`, `status`, `created_at`, `updated_at`) VALUES
+	(1, 'Fun fair', 'fun-fair', NULL, 1, '2019-10-09 12:24:50', '2019-10-09 12:24:50'),
+	(2, 'TMO 2018', 'tmo-2018', 'message-3_1.jpg', 1, '2019-10-09 12:54:36', '2019-10-09 12:54:36');
+/*!40000 ALTER TABLE `albums` ENABLE KEYS */;
+
+
+-- Dumping structure for table wop_db.banners
+CREATE TABLE IF NOT EXISTS `banners` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `caption` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `body` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `link` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `link_label` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` tinyint(1) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `position` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Dumping data for table wop_db.banners: ~0 rows (approximately)
+/*!40000 ALTER TABLE `banners` DISABLE KEYS */;
+INSERT INTO `banners` (`id`, `caption`, `image`, `body`, `link`, `link_label`, `status`, `created_at`, `updated_at`, `position`) VALUES
+	(1, 'BANNER 1', 'banner.jpg', 'Every Woman Is <br> a Woman Of Purpose', NULL, NULL, 1, '2019-10-07 13:59:15', '2019-10-07 13:59:15', NULL);
+/*!40000 ALTER TABLE `banners` ENABLE KEYS */;
+
+
+-- Dumping structure for table wop_db.events
+CREATE TABLE IF NOT EXISTS `events` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `slug` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `location` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `banner` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `body` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `summary` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` tinyint(1) NOT NULL,
+  `start_date` date NOT NULL,
+  `end_date` date DEFAULT NULL,
+  `start_time` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `end_time` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `register_link` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `is_featured` tinyint(1) DEFAULT 0,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Dumping data for table wop_db.events: ~1 rows (approximately)
+/*!40000 ALTER TABLE `events` DISABLE KEYS */;
+INSERT INTO `events` (`id`, `title`, `slug`, `location`, `image`, `banner`, `body`, `summary`, `status`, `start_date`, `end_date`, `start_time`, `end_time`, `register_link`, `is_featured`, `created_at`, `updated_at`) VALUES
+	(1, 'Total Makeover Summit', 'total-makeover-summit', '8901 Marmora Road, Glasgow, D04 89GR', 'tmo_1.jpg', NULL, NULL, NULL, 1, '2019-11-08', '2019-11-08', '10:00 AM', '3:00 PM', NULL, 0, '2019-10-07 18:10:52', '2019-10-07 19:18:30');
+/*!40000 ALTER TABLE `events` ENABLE KEYS */;
+
+
+-- Dumping structure for table wop_db.history
+CREATE TABLE IF NOT EXISTS `history` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `historable_id` int(10) unsigned NOT NULL,
+  `historable_type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `user_id` int(10) unsigned DEFAULT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `icon_class` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `historable_table` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `action` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Dumping data for table wop_db.history: ~39 rows (approximately)
+/*!40000 ALTER TABLE `history` DISABLE KEYS */;
+INSERT INTO `history` (`id`, `historable_id`, `historable_type`, `user_id`, `title`, `icon_class`, `historable_table`, `action`, `created_at`, `updated_at`) VALUES
+	(1, 17, 'Modules\\Pages\\Entities\\Page', 1, 'Dental Solutions', 'fa-plus-circle', 'pages', 'created', '2019-10-07 11:18:14', '2019-10-07 11:18:14'),
+	(2, 18, 'Modules\\Pages\\Entities\\Page', 1, 'Dental Solutions', 'fa-plus-circle', 'pages', 'created', '2019-10-07 11:18:14', '2019-10-07 11:18:14'),
+	(3, 17, 'Modules\\Pages\\Entities\\Page', 1, 'Dental Solutions', 'fa-edit', 'pages', 'updated', '2019-10-07 11:20:37', '2019-10-07 11:20:37'),
+	(4, 1, 'Modules\\Pages\\Entities\\Page', 1, 'Home', 'fa-edit', 'pages', 'updated', '2019-10-07 19:40:58', '2019-10-07 19:40:58'),
+	(5, 2, 'Modules\\Pages\\Entities\\Page', 1, 'About Us', 'fa-edit', 'pages', 'updated', '2019-10-07 19:58:20', '2019-10-07 19:58:20'),
+	(6, 3, 'Modules\\Pages\\Entities\\Page', 1, 'Who We Are', 'fa-edit', 'pages', 'updated', '2019-10-07 19:58:21', '2019-10-07 19:58:21'),
+	(7, 4, 'Modules\\Pages\\Entities\\Page', 1, 'Our Leadership', 'fa-edit', 'pages', 'updated', '2019-10-07 19:58:21', '2019-10-07 19:58:21'),
+	(8, 5, 'Modules\\Pages\\Entities\\Page', 1, 'Our Gold Partners', 'fa-edit', 'pages', 'updated', '2019-10-07 19:58:21', '2019-10-07 19:58:21'),
+	(9, 3, 'Modules\\Pages\\Entities\\Page', 1, 'Who We Are', 'fa-edit', 'pages', 'updated', '2019-10-07 20:00:42', '2019-10-07 20:00:42'),
+	(10, 4, 'Modules\\Pages\\Entities\\Page', 1, 'Our Leadership', 'fa-edit', 'pages', 'updated', '2019-10-07 20:00:42', '2019-10-07 20:00:42'),
+	(11, 5, 'Modules\\Pages\\Entities\\Page', 1, 'Our Gold Partners', 'fa-edit', 'pages', 'updated', '2019-10-07 20:00:43', '2019-10-07 20:00:43'),
+	(12, 3, 'Modules\\Pages\\Entities\\Page', 1, 'Who We Are', 'fa-edit', 'pages', 'updated', '2019-10-07 20:01:23', '2019-10-07 20:01:23'),
+	(13, 4, 'Modules\\Pages\\Entities\\Page', 1, 'Our Leadership', 'fa-edit', 'pages', 'updated', '2019-10-07 20:01:23', '2019-10-07 20:01:23'),
+	(14, 5, 'Modules\\Pages\\Entities\\Page', 1, 'Our Gold Partners', 'fa-edit', 'pages', 'updated', '2019-10-07 20:01:24', '2019-10-07 20:01:24'),
+	(15, 3, 'Modules\\Pages\\Entities\\Page', 1, 'Who We Are', 'fa-edit', 'pages', 'updated', '2019-10-07 20:08:48', '2019-10-07 20:08:48'),
+	(16, 4, 'Modules\\Pages\\Entities\\Page', 1, 'Our Leadership', 'fa-edit', 'pages', 'updated', '2019-10-07 20:08:48', '2019-10-07 20:08:48'),
+	(17, 5, 'Modules\\Pages\\Entities\\Page', 1, 'Our Gold Partners', 'fa-edit', 'pages', 'updated', '2019-10-07 20:08:48', '2019-10-07 20:08:48'),
+	(18, 3, 'Modules\\Pages\\Entities\\Page', 1, 'Who We Are', 'fa-edit', 'pages', 'updated', '2019-10-07 20:09:01', '2019-10-07 20:09:01'),
+	(19, 4, 'Modules\\Pages\\Entities\\Page', 1, 'Our Leadership', 'fa-edit', 'pages', 'updated', '2019-10-07 20:09:02', '2019-10-07 20:09:02'),
+	(20, 5, 'Modules\\Pages\\Entities\\Page', 1, 'Our Gold Partners', 'fa-edit', 'pages', 'updated', '2019-10-07 20:09:02', '2019-10-07 20:09:02'),
+	(21, 2, 'Modules\\Pages\\Entities\\Page', 1, 'About Us', 'fa-edit', 'pages', 'updated', '2019-10-08 09:05:26', '2019-10-08 09:05:26'),
+	(22, 3, 'Modules\\Pages\\Entities\\Page', 1, 'Who We Are', 'fa-edit', 'pages', 'updated', '2019-10-08 09:05:27', '2019-10-08 09:05:27'),
+	(23, 4, 'Modules\\Pages\\Entities\\Page', 1, 'Our Leadership', 'fa-edit', 'pages', 'updated', '2019-10-08 09:05:27', '2019-10-08 09:05:27'),
+	(24, 5, 'Modules\\Pages\\Entities\\Page', 1, 'Our Gold Partners', 'fa-edit', 'pages', 'updated', '2019-10-08 09:05:27', '2019-10-08 09:05:27'),
+	(25, 2, 'Modules\\Pages\\Entities\\Page', 1, 'About Us', 'fa-edit', 'pages', 'updated', '2019-10-08 12:20:43', '2019-10-08 12:20:43'),
+	(26, 3, 'Modules\\Pages\\Entities\\Page', 1, 'Our Vision', 'fa-edit', 'pages', 'updated', '2019-10-08 12:20:43', '2019-10-08 12:20:43'),
+	(27, 4, 'Modules\\Pages\\Entities\\Page', 1, 'Our Mission', 'fa-edit', 'pages', 'updated', '2019-10-08 12:20:43', '2019-10-08 12:20:43'),
+	(28, 3, 'Modules\\Pages\\Entities\\Page', 1, 'Our Vision', 'fa-edit', 'pages', 'updated', '2019-10-08 12:21:31', '2019-10-08 12:21:31'),
+	(29, 4, 'Modules\\Pages\\Entities\\Page', 1, 'Our Mission', 'fa-edit', 'pages', 'updated', '2019-10-08 12:22:09', '2019-10-08 12:22:09'),
+	(30, 4, 'Modules\\Pages\\Entities\\Page', 1, 'Our Mission', 'fa-edit', 'pages', 'updated', '2019-10-08 12:23:15', '2019-10-08 12:23:15'),
+	(31, 14, 'Modules\\Pages\\Entities\\Page', 1, 'Pastor Bola', 'fa-plus-circle', 'pages', 'created', '2019-10-08 12:35:27', '2019-10-08 12:35:27'),
+	(32, 14, 'Modules\\Pages\\Entities\\Page', 1, 'Our Leadership', 'fa-edit', 'pages', 'updated', '2019-10-08 12:37:07', '2019-10-08 12:37:07'),
+	(33, 14, 'Modules\\Pages\\Entities\\Page', 1, 'Our Leadership', 'fa-edit', 'pages', 'updated', '2019-10-08 12:40:30', '2019-10-08 12:40:30'),
+	(34, 13, 'Modules\\Menus\\Entities\\MenuLink', 1, 'Contact Us', 'fa-edit', 'menu_links', 'updated', '2019-10-08 19:12:20', '2019-10-08 19:12:20'),
+	(35, 13, 'Modules\\Pages\\Entities\\Page', 1, 'Contact Us', 'fa-edit', 'pages', 'updated', '2019-10-08 19:18:03', '2019-10-08 19:18:03'),
+	(36, 15, 'Modules\\Pages\\Entities\\Page', 1, 'Donates', 'fa-plus-circle', 'pages', 'created', '2019-10-08 19:48:02', '2019-10-08 19:48:02'),
+	(37, 15, 'Modules\\Pages\\Entities\\Page', 1, 'Donate', 'fa-edit', 'pages', 'updated', '2019-10-08 19:48:51', '2019-10-08 19:48:51'),
+	(38, 9, 'Modules\\Pages\\Entities\\Page', 1, 'Messages', 'fa-edit', 'pages', 'updated', '2019-10-08 20:29:18', '2019-10-08 20:29:18'),
+	(39, 10, 'Modules\\Pages\\Entities\\Page', 1, 'Testimonials', 'fa-edit', 'pages', 'updated', '2019-10-08 20:48:11', '2019-10-08 20:48:11');
+/*!40000 ALTER TABLE `history` ENABLE KEYS */;
+
+
+-- Dumping structure for table wop_db.menus
+CREATE TABLE IF NOT EXISTS `menus` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `slug` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` tinyint(1) NOT NULL DEFAULT 0,
+  `class` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Dumping data for table wop_db.menus: ~3 rows (approximately)
+/*!40000 ALTER TABLE `menus` DISABLE KEYS */;
+INSERT INTO `menus` (`id`, `name`, `slug`, `status`, `class`, `created_at`, `updated_at`) VALUES
+	(1, 'Main', 'main', 1, NULL, NULL, NULL),
+	(2, 'Footer', 'footer', 1, NULL, NULL, NULL),
+	(3, 'Top', 'top', 1, NULL, NULL, NULL);
+/*!40000 ALTER TABLE `menus` ENABLE KEYS */;
+
+
+-- Dumping structure for table wop_db.menu_links
+CREATE TABLE IF NOT EXISTS `menu_links` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `slug` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `tagline` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `parent_id` int(10) unsigned DEFAULT NULL,
+  `link_type` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `page_id` int(10) unsigned DEFAULT NULL,
+  `category_id` int(11) DEFAULT NULL,
+  `active` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `category_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `url` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `uri` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `menu_id` int(10) unsigned NOT NULL,
+  `position` int(10) unsigned DEFAULT NULL,
+  `target` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `restricted_to` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `class` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` tinyint(1) NOT NULL DEFAULT 0,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Dumping data for table wop_db.menu_links: ~19 rows (approximately)
+/*!40000 ALTER TABLE `menu_links` DISABLE KEYS */;
+INSERT INTO `menu_links` (`id`, `title`, `slug`, `tagline`, `parent_id`, `link_type`, `page_id`, `category_id`, `active`, `category_name`, `url`, `uri`, `menu_id`, `position`, `target`, `restricted_to`, `class`, `status`, `created_at`, `updated_at`) VALUES
+	(1, 'Home', '/', NULL, 0, NULL, 1, NULL, NULL, NULL, '', '', 1, NULL, NULL, NULL, NULL, 1, '2015-06-25 21:57:44', '2015-06-25 20:26:35'),
+	(2, 'About Us', '/', NULL, 0, NULL, 2, NULL, NULL, NULL, '', '', 1, NULL, NULL, NULL, NULL, 1, '2015-06-25 21:57:44', '2015-06-25 20:26:35'),
+	(6, 'Media', '/', NULL, 0, NULL, 6, NULL, NULL, NULL, '', '', 1, NULL, NULL, NULL, NULL, 1, '2015-06-25 21:57:44', '2015-06-25 20:26:35'),
+	(7, 'Photo Gallery', '/', NULL, 6, NULL, 7, NULL, NULL, NULL, '', '', 1, NULL, NULL, NULL, NULL, 1, '2015-06-25 21:57:44', '2015-06-25 20:26:35'),
+	(8, 'Events', '/', NULL, 6, NULL, 8, NULL, NULL, NULL, '', '/', 1, NULL, NULL, NULL, NULL, 1, '2015-06-25 21:57:44', '2015-06-25 20:26:35'),
+	(9, 'Messages', '/', NULL, 6, NULL, 9, NULL, NULL, NULL, '', '', 1, NULL, NULL, NULL, NULL, 1, '2015-06-25 21:57:44', '2015-06-25 20:26:35'),
+	(10, 'Testimonials', '/', NULL, 6, NULL, 10, NULL, NULL, NULL, '', '', 1, NULL, NULL, NULL, NULL, 1, '2015-06-25 21:57:44', '2015-06-25 20:26:35'),
+	(11, 'Gold Partners', '/', NULL, 0, NULL, 11, NULL, NULL, NULL, '', '/', 1, NULL, NULL, NULL, NULL, 1, '2015-06-25 21:57:44', '2015-06-25 20:26:35'),
+	(12, 'Shop', '/', NULL, 0, NULL, 12, NULL, NULL, NULL, '', '/', 1, NULL, NULL, NULL, NULL, 1, '2015-06-25 21:57:44', '2015-06-25 20:26:35'),
+	(13, 'Contact Us', '/', NULL, NULL, NULL, 13, NULL, NULL, NULL, NULL, '/', 1, NULL, NULL, NULL, NULL, 1, '2015-06-25 21:57:44', '2019-10-08 19:12:19'),
+	(14, 'Home', '/', NULL, 0, NULL, 1, NULL, NULL, NULL, '', '', 2, NULL, NULL, NULL, NULL, 1, '2015-06-25 21:57:44', '2015-06-25 20:26:35'),
+	(15, 'About Us', '/', NULL, 0, NULL, 2, NULL, NULL, NULL, '', '', 2, NULL, NULL, NULL, NULL, 1, '2015-06-25 21:57:44', '2015-06-25 20:26:35'),
+	(16, 'Media', '/', NULL, 0, NULL, 6, NULL, NULL, NULL, '', '', 2, NULL, NULL, NULL, NULL, 1, '2015-06-25 21:57:44', '2015-06-25 20:26:35'),
+	(17, 'Gold Partners', '/', NULL, 0, NULL, 11, NULL, NULL, NULL, '', '/', 2, NULL, NULL, NULL, NULL, 1, '2015-06-25 21:57:44', '2015-06-25 20:26:35'),
+	(18, 'Shop', '/', NULL, 0, NULL, 12, NULL, NULL, NULL, '', '/', 2, NULL, NULL, NULL, NULL, 1, '2015-06-25 21:57:44', '2015-06-25 20:26:35'),
+	(19, 'Contact Us', '/', NULL, 0, NULL, 3, NULL, NULL, NULL, '', '/', 2, NULL, NULL, NULL, NULL, 1, '2015-06-25 21:57:44', '2015-06-25 20:26:35'),
+	(20, 'Home', '/', NULL, 0, NULL, 1, NULL, NULL, NULL, '', '', 3, NULL, NULL, NULL, NULL, 1, '2015-06-25 21:57:44', '2015-06-25 20:26:35'),
+	(21, 'Events', '/', NULL, 6, NULL, 8, NULL, NULL, NULL, '', '/', 3, NULL, NULL, NULL, NULL, 1, '2015-06-25 21:57:44', '2015-06-25 20:26:35'),
+	(22, 'Messages', '/', NULL, 6, NULL, 9, NULL, NULL, NULL, '', '', 3, NULL, NULL, NULL, NULL, 1, '2015-06-25 21:57:44', '2015-06-25 20:26:35');
+/*!40000 ALTER TABLE `menu_links` ENABLE KEYS */;
+
+
+-- Dumping structure for table wop_db.migrations
+CREATE TABLE IF NOT EXISTS `migrations` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `batch` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Dumping data for table wop_db.migrations: ~19 rows (approximately)
+/*!40000 ALTER TABLE `migrations` DISABLE KEYS */;
+INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
+	(1, '2014_07_02_230147_migration_cartalyst_sentinel', 1),
+	(2, '2016_03_02_084255_create_banners_table', 1),
+	(3, '2016_03_07_120917_add_positon_to_banners_table', 1),
+	(4, '2016_08_16_134331_create_events_table', 1),
+	(5, '2018_12_03_002750_create_tenants_table', 1),
+	(6, '2016_03_13_135042_create_history_table', 2),
+	(7, '2016_03_05_110859_create_menus_table', 3),
+	(8, '2016_03_05_113829_create_menu_links_table', 3),
+	(9, '2016_03_13_015928_create_settings_table', 4),
+	(10, '2016_02_04_141945_add_is_first_login_to_users_table', 5),
+	(11, '2016_08_07_184117_add_fields_to_users_table', 5),
+	(12, '2015_06_28_163955_create_pages_table', 6),
+	(13, '2019_01_23_112728_add_icon_to_pages_table', 7),
+	(17, '2016_03_07_035038_create_teams_table', 9),
+	(21, '2019_01_23_124704_create_publications_table', 10),
+	(25, '2019_10_08_135314_create_sermons_table', 11),
+	(27, '2016_10_27_181348_create_albums_table', 12),
+	(30, '2019_10_09_091653_create_photos_table', 13),
+	(31, '2019_10_09_092220_create_photoables_table', 13);
+/*!40000 ALTER TABLE `migrations` ENABLE KEYS */;
+
+
+-- Dumping structure for table wop_db.pages
+CREATE TABLE IF NOT EXISTS `pages` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `meta_robots_no_index` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `meta_robots_no_follow` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `position` int(10) unsigned NOT NULL DEFAULT 0,
+  `parent_id` int(10) unsigned DEFAULT NULL,
+  `is_home` tinyint(1) NOT NULL DEFAULT 0,
+  `redirect` tinyint(1) NOT NULL DEFAULT 0,
+  `css` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `js` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `module` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `template` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `slug` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `uri` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `body` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `tagline` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` tinyint(1) NOT NULL DEFAULT 1,
+  `meta_title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `meta_keywords` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `meta_description` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `icon` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Dumping data for table wop_db.pages: ~14 rows (approximately)
+/*!40000 ALTER TABLE `pages` DISABLE KEYS */;
+INSERT INTO `pages` (`id`, `meta_robots_no_index`, `meta_robots_no_follow`, `image`, `position`, `parent_id`, `is_home`, `redirect`, `css`, `js`, `module`, `template`, `slug`, `uri`, `title`, `body`, `tagline`, `status`, `meta_title`, `meta_keywords`, `meta_description`, `created_at`, `updated_at`, `icon`) VALUES
+	(1, '0', '0', NULL, 0, 0, 1, 0, NULL, NULL, '', 'home', '/', '/', 'Home', NULL, NULL, 1, NULL, NULL, NULL, '2015-06-25 21:57:44', '2015-06-25 20:26:35', NULL),
+	(2, '0', '0', NULL, 0, NULL, 0, 0, NULL, NULL, NULL, 'about', 'about-us', 'about-us', 'About Us', '<p>\r\n                  Woman on Purpose (“WOP”) is an affiliate of Northern Star Ministries, a leadership ministry founded and lead by Pastors Olatunde and Bola Adepoju. Pastor Bola is the founder of Woman on Purpose. She is an ordained pastor and author whose ministry has spanned globally, reaching women of all ages, races and ethnic backgrounds. By the power of the Holy Spirit, her message speaks to the heart of women and has been known to empower and lead them into that sacred place where God wants them to be. Pastor Bola’s passion is to help people see God’s profound grace in their lives.\r\n                </p>\r\n                <p>\r\n                  An international ministry, men and women from all over the world say the bi-weekly, Woman on Purpose, newsletter continues to bless and inspire through its practical application of biblical stories and principles. It is transmitted to women in various parts of the U.S. and overseas.\r\n                </p>\r\n                <p>\r\n                  Pastor Bola received her Bachelors of Arts degree at Spelman College and her Master’s in Business Administration from Atlanta University, both in Atlanta. She is married to the love of her life and is blessed with two beautiful children.\r\n                </p>', NULL, 1, NULL, NULL, NULL, '2015-06-25 21:57:44', '2019-10-08 12:20:43', NULL),
+	(3, '0', '0', NULL, 0, 2, 0, 0, NULL, NULL, NULL, 'default', 'our-vision', 'about-us/our-vision', 'Our Vision', '<p>\r\n                        Woman on Purpose will empower “women leaders” (every woman is a leader) to become change agents in the community by using biblical\r\n                        principles and practical teachings.\r\n                      </p>', NULL, 1, NULL, NULL, NULL, '2015-06-25 21:57:44', '2019-10-08 12:21:30', NULL),
+	(4, '0', '0', NULL, 0, 2, 0, 0, NULL, NULL, NULL, 'default', 'our-mission', 'about-us/our-mission', 'Our Mission', '<ol class="custom-list type-4">\r\n\r\n                        <li><div class="wrapper">To improve spiritual stability</div></li>\r\n                        <li><div class="wrapper">To restore ancient values that cause us to cherish and value one another</div></li>\r\n                        <li><div class="wrapper">To teach life-sustaining skills;</div></li>\r\n                        <li><div class="wrapper">To foster healthy practices;</div></li>\r\n                        <li><div class="wrapper">To create opportunities for family discipleship;</div></li>\r\n                        <li><div class="wrapper">To create an environment for women to network;</div></li>\r\n                        <li><div class="wrapper">To improve economic/financial stability; and</div></li>\r\n                        <li><div class="wrapper">To build a strong army of women prepared for the second coming of our Lord Jesus Christ.</div></li>\r\n\r\n                      </ol>', NULL, 1, NULL, NULL, NULL, '2015-06-25 21:57:44', '2019-10-08 12:23:15', NULL),
+	(6, '0', '0', NULL, 0, 0, 0, 0, NULL, NULL, '', 'default', 'media', 'media', 'Media', NULL, NULL, 1, NULL, NULL, NULL, '2015-06-25 21:57:44', '2015-06-25 20:26:35', NULL),
+	(7, '0', '0', NULL, 0, 6, 0, 0, NULL, NULL, 'albums', 'default', 'photo-gallery', 'media/photo-gallery', 'Photo Gallery', NULL, NULL, 1, NULL, NULL, NULL, '2015-06-25 21:57:44', '2015-06-25 20:26:35', NULL),
+	(8, '0', '0', NULL, 0, 6, 0, 0, NULL, NULL, 'events', 'default', 'events', 'media/events', 'Events', NULL, NULL, 1, NULL, NULL, NULL, '2015-06-25 21:57:44', '2015-06-25 20:26:35', NULL),
+	(9, '0', '0', 'xa51EG4LTRlF.jpg', 0, 6, 0, 0, NULL, NULL, 'sermons', 'default', 'messages', 'media/messages', 'Messages', NULL, NULL, 1, NULL, NULL, NULL, '2015-06-25 21:57:44', '2019-10-08 20:29:17', NULL),
+	(10, '0', '0', 'GlhEftQ4Z4Rp.jpg', 0, 6, 0, 0, NULL, NULL, 'testimonials', 'default', 'testimonials', 'media/testimonials', 'Testimonials', NULL, NULL, 1, NULL, NULL, NULL, '2015-06-25 21:57:44', '2019-10-08 20:48:10', NULL),
+	(11, '0', '0', NULL, 0, 0, 0, 0, NULL, NULL, 'partners', 'partners', 'gold-partners', 'gold-partners', 'Gold Partners', NULL, NULL, 1, NULL, NULL, NULL, '2015-06-25 21:57:44', '2015-06-25 20:26:35', NULL),
+	(12, '0', '0', NULL, 0, 0, 0, 0, NULL, NULL, 'shop', 'default', 'shop', 'shop', 'Shop', NULL, NULL, 1, NULL, NULL, NULL, '2015-06-25 21:57:44', '2015-06-25 20:26:35', NULL),
+	(13, '0', '0', NULL, 0, NULL, 0, 0, NULL, NULL, NULL, 'contact', 'contact-us', 'contact-us', 'Contact Us', '<p>Thank you for visiting our website. To invite Pastor Bola for speaking engagements, for special prayers or to receive more information on our ministry products, please leave your information below and a member of your support team will contact you.</p>', 'We\'d Love To Hear From You!', 1, NULL, NULL, NULL, '2015-06-25 21:57:44', '2019-10-08 19:18:03', NULL),
+	(14, '0', '0', 'dsgb4vzrmIAE.jpg', 0, NULL, 0, 0, NULL, NULL, NULL, 'default', 'our-leadership', 'our-leadership', 'Our Leadership', '<p>Pastor Bola is the founder of Woman on Purpose. She is an ordained pastor and author whose ministry has spanned globally, reaching women of all ages, races and ethnic backgrounds. By the power of the Holy Spirit, her message speaks to the heart of women and has been known to empower and lead them into that sacred place where God wants them to be. Pastor Bola’s passion is to help people see God’s profound grace in their lives.<br></p><p>Pastor Bola received her Bachelors of Arts degree at Spelman College and her Master’s in Business Administration from Atlanta University, both in Atlanta. She is married to the love of her life and is blessed with two beautiful children.</p>\r\n<p><br></p>', 'Pastor Bola', 1, NULL, NULL, NULL, '2019-10-08 12:35:27', '2019-10-08 12:40:30', NULL),
+	(15, '0', '0', 'BBW9keDzrCso.jpg', 0, NULL, 0, 0, NULL, NULL, NULL, 'donate', 'donate', 'donate', 'Donate', NULL, 'Partner to sponsor any of our upcoming events', 1, NULL, NULL, NULL, '2019-10-08 19:48:02', '2019-10-08 19:48:51', 'Become a Gold Partner');
+/*!40000 ALTER TABLE `pages` ENABLE KEYS */;
+
+
+-- Dumping structure for table wop_db.persistences
+CREATE TABLE IF NOT EXISTS `persistences` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `user_id` int(10) unsigned NOT NULL,
+  `code` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=52 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Dumping data for table wop_db.persistences: ~49 rows (approximately)
+/*!40000 ALTER TABLE `persistences` DISABLE KEYS */;
+INSERT INTO `persistences` (`id`, `user_id`, `code`, `created_at`, `updated_at`) VALUES
+	(1, 1, 'XkfNdc08cBuQ56HYlLBZBEC4riSatOOj', '2019-01-20 19:09:33', '2019-01-20 19:09:33'),
+	(2, 1, 'ysJHDfhZ9iL2axHiObuvczd3Hb3XzFxW', '2019-01-23 08:34:49', '2019-01-23 08:34:49'),
+	(3, 1, 'ZJlvSJofd62XCq7KVoiGsboE2hwU5Rbi', '2019-01-31 06:20:18', '2019-01-31 06:20:18'),
+	(4, 1, 'wBVf3wrRXDNSmxzTMoHUIAnEw2dhpeXK', '2019-02-01 04:49:20', '2019-02-01 04:49:20'),
+	(5, 1, 'wuqPvfLmlGmDDQZVbutU42ZYdeydk0F8', '2019-02-01 11:30:07', '2019-02-01 11:30:07'),
+	(6, 1, '6lTzQdPy1MbUcazCQSeBeVEAL7BfxRWS', '2019-02-01 15:45:49', '2019-02-01 15:45:49'),
+	(7, 1, 'A91VLGrjr0ysrh5saTN0U2QVZ8dFHpLW', '2019-02-04 06:18:17', '2019-02-04 06:18:17'),
+	(8, 1, 'C6Gjhxw8EpHk4aA7fwQEZnw8pRKEFukR', '2019-02-04 11:37:24', '2019-02-04 11:37:24'),
+	(9, 1, 'D51QMyTmM5Ziu42CJR7l529Z4CWpKdBj', '2019-02-05 11:11:27', '2019-02-05 11:11:27'),
+	(10, 1, 'uTMP5bIWAmyyugOdUQ7YBdewnNS2Ln9M', '2019-02-05 11:15:43', '2019-02-05 11:15:43'),
+	(11, 1, 'xbualJxG5JcHgq6qjNEzmCjPzyZD5VGA', '2019-02-06 10:54:15', '2019-02-06 10:54:15'),
+	(12, 1, '29L82ALtzGIhXfadwUnEZOEJW24Bbjbe', '2019-04-10 15:40:51', '2019-04-10 15:40:51'),
+	(13, 1, 'hJlq7fiZNby8HZ4D4qXzWx0nHIN2nT9Z', '2019-04-15 16:37:11', '2019-04-15 16:37:11'),
+	(14, 1, '9UafFwXYJSqSnGkvpeFZXzBfJLXmzbXN', '2019-04-18 13:47:01', '2019-04-18 13:47:01'),
+	(15, 1, '6BG8aYYUkXGEfNzRPf1RZjtJzXZ633k0', '2019-04-18 14:12:45', '2019-04-18 14:12:45'),
+	(16, 1, 'Y0ZV5pECfPHKyiFqdZeP2tfFKkwn1Pcp', '2019-04-22 14:38:49', '2019-04-22 14:38:49'),
+	(17, 1, 'MQIFIv0c9zX5D7WAMZbOgkAO1C9DWkrD', '2019-04-25 17:24:19', '2019-04-25 17:24:19'),
+	(18, 1, '52RRLiznJHLQcPZ2bsSjHMbjvhvy4JpD', '2019-04-26 15:57:36', '2019-04-26 15:57:36'),
+	(19, 1, '6nWSZJBQjWcFaO6H9ryGOeuF15MdCi8U', '2019-05-02 08:40:02', '2019-05-02 08:40:02'),
+	(20, 1, '9HDmdVw9KRhL87vgzhv0BoRuly4sVdGY', '2019-05-06 07:23:23', '2019-05-06 07:23:23'),
+	(21, 1, 'FhWWOSDSCz1XFBzh2DusdTtCmPNXH1Y8', '2019-05-08 16:31:26', '2019-05-08 16:31:26'),
+	(22, 1, 'l5LnOE3wEHqCG04OH8CdEmF0uMPb46H5', '2019-05-14 16:12:16', '2019-05-14 16:12:16'),
+	(23, 1, 'EeoAr64nmg24soAPtB6pDkh9c6dZLHXf', '2019-05-14 16:12:41', '2019-05-14 16:12:41'),
+	(24, 1, 'VY8YwmWRwKlZzbGEsOXaHhezw7aULAMQ', '2019-05-15 07:58:40', '2019-05-15 07:58:40'),
+	(25, 1, 'xVVcsDTemj5rXoR3Whu11ZUy1p0lCeJ4', '2019-05-23 05:22:30', '2019-05-23 05:22:30'),
+	(26, 1, 'iJPQyzcfc1bQLkBORodbrIqXSrPBmJ66', '2019-05-23 10:18:03', '2019-05-23 10:18:03'),
+	(27, 1, '8I9ENYEwzXCJb9HD36yU5xVhfZZea7j0', '2019-05-23 11:58:21', '2019-05-23 11:58:21'),
+	(28, 1, 'LoEinXRT47XyP8nxCkq2Lf5DEX1RdFaV', '2019-06-09 19:27:26', '2019-06-09 19:27:26'),
+	(29, 1, 'HaY9Zpfa0osVu6UbIPnt86OPCztJwWBo', '2019-06-17 11:59:35', '2019-06-17 11:59:35'),
+	(30, 1, 'TatIVZ6n0sKSDn9tZK0YURlbTQ1LWOHo', '2019-06-24 11:04:18', '2019-06-24 11:04:18'),
+	(31, 1, 'GxIMG61HpSh22h5K8jvOcPYjV1U6Cs45', '2019-08-29 10:44:09', '2019-08-29 10:44:09'),
+	(32, 1, 'WcryoH2DB1e3nkTe9uQWipnYBjAz29W6', '2019-09-06 09:24:49', '2019-09-06 09:24:49'),
+	(33, 1, '7zi2MZfhNMMAyFDJcvvhZV4deyll9ZTQ', '2019-09-10 15:16:22', '2019-09-10 15:16:22'),
+	(34, 1, 'OvviKV1w9m9XZlY5bv5xUSgenloyF1di', '2019-09-10 18:30:04', '2019-09-10 18:30:04'),
+	(35, 1, 'sX4gYGcrHEKytuLHuPgTWyJRKnmph2Jm', '2019-09-18 07:19:16', '2019-09-18 07:19:16'),
+	(36, 1, '2qhzztNIkDMfDYaGJZAeI3DcWWSkrtzW', '2019-09-19 10:40:09', '2019-09-19 10:40:09'),
+	(37, 1, 'iSHBTf2unNPv1Ft5gFJzCj1Fd8A7TfBi', '2019-10-04 07:48:00', '2019-10-04 07:48:00'),
+	(38, 1, 'iGtYUsBKsqYIN979PeL0UrBRl7Gkbdon', '2019-10-04 13:08:14', '2019-10-04 13:08:14'),
+	(39, 1, 'xruweaTYCHeUIZ1UU0x7z1IHQOGGZc3R', '2019-10-04 13:12:41', '2019-10-04 13:12:41'),
+	(41, 1, 'wK0ow2zEEyURHzuHlRb4ipWk7bqf8wJA', '2019-10-04 13:44:12', '2019-10-04 13:44:12'),
+	(42, 1, 'uTNbcP3CtNarrxHhMlAwO7u4VNZy0agT', '2019-10-07 06:03:15', '2019-10-07 06:03:15'),
+	(44, 1, 'Bs9QTataplNRqpp0MORrouTcUFobHcGQ', '2019-10-07 13:17:08', '2019-10-07 13:17:08'),
+	(45, 1, 'u8R84uU8mTi0anHygIGXZ37sdByZUUYH', '2019-10-08 09:04:36', '2019-10-08 09:04:36'),
+	(46, 1, 'PGi883qdpWUNwj7sFz0VMrEdPjGn2X8f', '2019-10-08 10:08:59', '2019-10-08 10:08:59'),
+	(47, 1, 'tTIOCDjTuG5vKBrvef0sMPtUr40fi0M5', '2019-10-08 12:13:20', '2019-10-08 12:13:20'),
+	(48, 1, 'KzbwFk7BcINwPloOUGE40yIDXRmiV6Rm', '2019-10-08 19:07:27', '2019-10-08 19:07:27'),
+	(49, 1, 'tPdrd3TVpDIR5xnV04MG33kh7VLOEnON', '2019-10-09 08:13:55', '2019-10-09 08:13:55'),
+	(50, 1, 'PClnTJzOr7hMUSNc7hxKofOFIGqcCzvA', '2019-10-09 08:13:55', '2019-10-09 08:13:55'),
+	(51, 1, '39KACpgwAOg96hSLgALeYVAukVxtcrJN', '2019-10-09 10:57:26', '2019-10-09 10:57:26');
+/*!40000 ALTER TABLE `persistences` ENABLE KEYS */;
+
+
+-- Dumping structure for table wop_db.photoables
+CREATE TABLE IF NOT EXISTS `photoables` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `photo_id` int(11) NOT NULL,
+  `photoable_id` int(11) NOT NULL,
+  `photoable_type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Dumping data for table wop_db.photoables: ~0 rows (approximately)
+/*!40000 ALTER TABLE `photoables` DISABLE KEYS */;
+INSERT INTO `photoables` (`id`, `photo_id`, `photoable_id`, `photoable_type`, `created_at`, `updated_at`) VALUES
+	(1, 2, 1, 'Modules\\Albums\\Entities\\Album', NULL, NULL),
+	(2, 3, 1, 'Modules\\Albums\\Entities\\Album', NULL, NULL),
+	(3, 4, 1, 'Modules\\Albums\\Entities\\Album', NULL, NULL),
+	(4, 6, 2, 'Modules\\Albums\\Entities\\Album', NULL, NULL);
+/*!40000 ALTER TABLE `photoables` ENABLE KEYS */;
+
+
+-- Dumping structure for table wop_db.photos
+CREATE TABLE IF NOT EXISTS `photos` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` tinyint(1) NOT NULL DEFAULT 1,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Dumping data for table wop_db.photos: ~0 rows (approximately)
+/*!40000 ALTER TABLE `photos` DISABLE KEYS */;
+INSERT INTO `photos` (`id`, `image`, `description`, `status`, `created_at`, `updated_at`) VALUES
+	(1, 'message-2_1.jpg', NULL, 1, '2019-10-09 12:36:59', '2019-10-09 12:37:00'),
+	(2, 'banner.jpg', NULL, 1, '2019-10-09 12:37:50', '2019-10-09 12:37:50'),
+	(3, 'section-1.jpg', NULL, 1, '2019-10-09 12:38:06', '2019-10-09 12:38:06'),
+	(4, 'section-1_1.jpg', NULL, 1, '2019-10-09 12:39:18', '2019-10-09 12:39:18'),
+	(5, 'message-1_6.jpg', NULL, 1, '2019-10-09 12:50:10', '2019-10-09 12:50:10'),
+	(6, 'message-2_2.jpg', NULL, 1, '2019-10-09 12:53:31', '2019-10-09 12:53:31');
+/*!40000 ALTER TABLE `photos` ENABLE KEYS */;
+
+
+-- Dumping structure for table wop_db.reminders
+CREATE TABLE IF NOT EXISTS `reminders` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `user_id` int(10) unsigned NOT NULL,
+  `code` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `completed` tinyint(1) NOT NULL DEFAULT 0,
+  `completed_at` timestamp NULL DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Dumping data for table wop_db.reminders: ~0 rows (approximately)
+/*!40000 ALTER TABLE `reminders` DISABLE KEYS */;
+/*!40000 ALTER TABLE `reminders` ENABLE KEYS */;
+
+
+-- Dumping structure for table wop_db.roles
+CREATE TABLE IF NOT EXISTS `roles` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `slug` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `permissions` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Dumping data for table wop_db.roles: ~2 rows (approximately)
+/*!40000 ALTER TABLE `roles` DISABLE KEYS */;
+INSERT INTO `roles` (`id`, `slug`, `name`, `permissions`, `created_at`, `updated_at`) VALUES
+	(1, 'admin', 'Admin', '{"albums.index":true,"albums.create":true,"albums.store":true,"albums.edit":true,"albums.update":true,"albums.destroy":true,"albums.show":false,"banners.index":true,"banners.create":true,"banners.store":true,"banners.edit":true,"banners.update":true,"banners.destroy":true,"categories.index":true,"categories.create":true,"categories.store":true,"categories.edit":true,"categories.update":true,"categories.destroy":true,"dashboard.index":true,"events.index":true,"events.create":true,"events.store":true,"events.edit":true,"events.update":true,"events.destroy":true,"history.index":true,"menus.index":true,"menus.create":true,"menus.store":true,"menus.edit":true,"menus.update":true,"menus.destroy":true,"menus.menu_links.index":true,"menus.menu_links.create":true,"menus.menu_links.store":true,"menus.menu_links.edit":true,"menus.menu_links.update":true,"menus.menu_links.destroy":true,"pages.index":true,"pages.create":true,"pages.store":true,"pages.edit":true,"pages.update":true,"pages.destroy":true,"photos.index":false,"photos.create":false,"photos.store":false,"photos.edit":false,"photos.update":false,"photos.destroy":false,"sermons.index":true,"sermons.create":true,"sermons.store":true,"sermons.edit":true,"sermons.update":true,"sermons.destroy":true,"settings.index":true,"settings.store":true,"testimonials.index":false,"testimonials.create":false,"testimonials.store":false,"testimonials.edit":false,"testimonials.update":false,"testimonials.destroy":false,"users.index":true,"users.create":true,"users.store":true,"users.edit":true,"users.update":true,"users.destroy":true,"users.roles.index":true,"users.roles.create":true,"users.roles.store":true,"users.roles.edit":true,"users.roles.update":true,"users.roles.destroy":true}', '2019-01-20 19:03:32', '2019-10-09 09:35:36'),
+	(2, 'user', 'User', NULL, '2019-01-20 19:03:32', '2019-01-20 19:03:32'),
+	(4, 'test', 'test', '', '2019-10-07 12:05:53', '2019-10-07 12:05:53');
+/*!40000 ALTER TABLE `roles` ENABLE KEYS */;
+
+
+-- Dumping structure for table wop_db.role_users
+CREATE TABLE IF NOT EXISTS `role_users` (
+  `user_id` int(10) unsigned NOT NULL,
+  `role_id` int(10) unsigned NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`user_id`,`role_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Dumping data for table wop_db.role_users: ~2 rows (approximately)
+/*!40000 ALTER TABLE `role_users` DISABLE KEYS */;
+INSERT INTO `role_users` (`user_id`, `role_id`, `created_at`, `updated_at`) VALUES
+	(1, 1, '2019-01-20 19:03:33', '2019-01-20 19:03:33'),
+	(2, 1, '2019-09-18 09:48:13', '2019-09-18 09:48:13');
+/*!40000 ALTER TABLE `role_users` ENABLE KEYS */;
+
+
+-- Dumping structure for table wop_db.sermons
+CREATE TABLE IF NOT EXISTS `sermons` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `slug` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `date` date DEFAULT NULL,
+  `body` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `scriptures` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `preacher` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `video_url` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `audio_url` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `document` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` tinyint(1) NOT NULL DEFAULT 1,
+  `is_featured` tinyint(1) NOT NULL DEFAULT 0,
+  `excerpt` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Dumping data for table wop_db.sermons: ~3 rows (approximately)
+/*!40000 ALTER TABLE `sermons` DISABLE KEYS */;
+INSERT INTO `sermons` (`id`, `title`, `slug`, `date`, `body`, `scriptures`, `preacher`, `image`, `video_url`, `audio_url`, `document`, `status`, `is_featured`, `excerpt`, `created_at`, `updated_at`) VALUES
+	(1, 'You cannot afford to miss your "CANAAN"!', 'you-cannot-afford-to-miss-your-canaan', '2019-09-27', '<p>﻿It is not everyone who enters a race or competition finishes it. Some are disqualified during their training period. Many skillful athletes or players who participate in the rigorous training for months in preparation for tournaments are unable to make the final list. No doubt a lot of them show great skill, but lacked discipline. Many could not control their appetites. Some were late for their training sessions, others snuck out of the training camp in search of the pleasures of life, while others lacked respect for the coach’s authority, and so on. Discouragements are inevitable when they listen to “strange voices”. Others are tired along the way and give up half way through the race. Ecclesiastes 9:11 says, “ The race is not won to the swift, but to the one who endures to the end.” Though it was somewhat easy (because of God’s divine intervention) for the Israelites to get</p>', 'DEUTERONOMY 1:2-46; NUMBERS 14', 'Pastor Bola', 'message-2.jpg', NULL, NULL, NULL, 1, 1, 'It is not everyone who enters a race or competition finishes it. Some are disqualified during their training period. Many skillful athletes or players who participate in the rigorous training for months in preparation for tournaments are unable to make the final list. No doubt a lot of them show great skill, but lacked discipline. Many could not control their appetites. Some were late for their training sessions, others snuck out of the training camp in search of the pleasures of life, while others lacked respect for the coach’s authority, and so on. Discouragements are inevitable when they listen to “strange voices”. Others are tired along the way and give up half way through the race. Ecclesiastes 9:11 says, “ The race is not won to the swift, but to the one who endures to the end.” Though it was somewhat easy (because of God’s divine intervention) for the Israelites to get.', '2019-10-08 14:22:53', '2019-10-08 16:32:48'),
+	(2, 'You cannot afford to miss your "CANAAN"! 2', 'you-cannot-afford-to-miss-your-canaan-2', '2019-09-27', '<p><span style="font-family: Poppins;">﻿</span><span style="color: rgb(51, 51, 51); font-family: Lato, Helvetica, Arial, sans-serif; font-size: 14px;">It is not everyone who enters a race or competition finishes it. Some are disqualified during their training period. Many skillful athletes or players who participate in the rigorous training for months in preparation for tournaments are unable to make the final list. No doubt a lot of them show great skill, but lacked discipline. Many could not control their appetites. Some were late for their training sessions, others snuck out of the training camp in search of the pleasures of life, while others lacked respect for the coach’s authority, and so on. Discouragements are inevitable when they listen to “strange voices”. Others are tired along the way and give up half way through the race. Ecclesiastes 9:11 says, “ The race is not won to the swift, but to the one who endures to the end.” Though it was somewhat easy (because of God’s divine intervention) for the Israelites to get</span><br></p>', 'DEUTERONOMY 1:2-46; NUMBERS 14', 'Pastor Bola', 'message-3.jpg', NULL, NULL, NULL, 1, 0, 'It is not everyone who enters a race or competition finishes it. Some are disqualified during their training period. Many skillful athletes or players who participate in the rigorous training for months in preparation for tournaments are unable to make the final list. No doubt a lot of them show great skill, but lacked discipline. Many could not control their appetites. Some were late for their training sessions, others snuck out of the training camp in search of the pleasures of life, while others lacked respect for the coach’s authority, and so on. Discouragements are inevitable when they listen to “strange voices”. Others are tired along the way and give up half way through the race. Ecclesiastes 9:11 says, “ The race is not won to the swift, but to the one who endures to the end.” Though it was somewhat easy (because of God’s divine intervention) for the Israelites to get.', '2019-10-08 14:22:53', '2019-10-08 14:57:51'),
+	(3, 'You cannot afford to miss your "CANAAN"! 3', '', '2019-09-27', '<p><span style="font-family: Poppins;">﻿</span><span style="color: rgb(51, 51, 51); font-family: Lato, Helvetica, Arial, sans-serif; font-size: 14px;">It is not everyone who enters a race or competition finishes it. Some are disqualified during their training period. Many skillful athletes or players who participate in the rigorous training for months in preparation for tournaments are unable to make the final list. No doubt a lot of them show great skill, but lacked discipline. Many could not control their appetites. Some were late for their training sessions, others snuck out of the training camp in search of the pleasures of life, while others lacked respect for the coach’s authority, and so on. Discouragements are inevitable when they listen to “strange voices”. Others are tired along the way and give up half way through the race. Ecclesiastes 9:11 says, “ The race is not won to the swift, but to the one who endures to the end.” Though it was somewhat easy (because of God’s divine intervention) for the Israelites to get</span><br></p>', 'DEUTERONOMY 1:2-46; NUMBERS 14', 'Pastor Bola', NULL, NULL, NULL, NULL, 1, 0, 'It is not everyone who enters a race or competition finishes it. Some are disqualified during their training period. Many skillful athletes or players who participate in the rigorous training for months in preparation for tournaments are unable to make the final list. No doubt a lot of them show great skill, but lacked discipline. Many could not control their appetites. Some were late for their training sessions, others snuck out of the training camp in search of the pleasures of life, while others lacked respect for the coach’s authority, and so on. Discouragements are inevitable when they listen to “strange voices”. Others are tired along the way and give up half way through the race. Ecclesiastes 9:11 says, “ The race is not won to the swift, but to the one who endures to the end.” Though it was somewhat easy (because of God’s divine intervention) for the Israelites to get.', '2019-10-08 14:22:53', '2019-10-08 14:41:13');
+/*!40000 ALTER TABLE `sermons` ENABLE KEYS */;
+
+
+-- Dumping structure for table wop_db.settings
+CREATE TABLE IF NOT EXISTS `settings` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `key_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `value` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Dumping data for table wop_db.settings: ~38 rows (approximately)
+/*!40000 ALTER TABLE `settings` DISABLE KEYS */;
+INSERT INTO `settings` (`id`, `key_name`, `value`, `created_at`, `updated_at`) VALUES
+	(1, 'test_email', 'info@pollitanalytics.com', '2019-02-01 11:32:15', '2019-06-24 11:04:34'),
+	(2, 'mail_driver', 'log', '2019-02-01 11:32:16', '2019-02-01 11:32:16'),
+	(3, 'mail_from_name', 'Pollit Anayltics', '2019-02-01 11:32:16', '2019-02-01 15:53:22'),
+	(4, 'mail_from_address', 'info@pollitanalytics.com', '2019-02-01 11:32:16', '2019-06-24 11:04:35'),
+	(5, 'mail_host', 'smtp.mailgun.org', '2019-02-01 11:32:16', '2019-02-01 11:32:16'),
+	(6, 'mail_port', '587', '2019-02-01 11:32:16', '2019-02-01 11:32:16'),
+	(7, 'mail_username', 'test@admin.com', '2019-02-01 11:32:16', '2019-02-01 11:32:16'),
+	(8, 'mail_password', 'admin', '2019-02-01 11:32:16', '2019-02-01 11:32:16'),
+	(9, 'mail_encryption', 'tls', '2019-02-01 11:32:16', '2019-02-01 11:32:16'),
+	(10, 'mailgun_domain', NULL, '2019-02-01 11:32:16', '2019-02-01 11:32:16'),
+	(11, 'mailgun_secret', NULL, '2019-02-01 11:32:16', '2019-02-01 11:32:16'),
+	(12, 'website_title', 'Woman On Purpose', '2019-02-01 11:32:17', '2019-10-07 12:39:23'),
+	(13, 'app_name', 'WOP CMS', '2019-02-01 11:32:17', '2019-10-07 12:39:23'),
+	(14, 'webmaster_email', NULL, '2019-02-01 11:32:17', '2019-02-01 11:32:17'),
+	(15, 'contact_email', 'info@pollitanalytics.com', '2019-02-01 11:32:17', '2019-05-23 06:02:12'),
+	(16, 'phone', '+234 1 342 3928', '2019-02-01 11:32:17', '2019-05-23 06:02:12'),
+	(17, 'address', 'Pollit Analytics Limited <br>318 Murtala Muhammed Way, Yaba, Lagos, Nigeria.', '2019-02-01 11:32:17', '2019-10-07 12:35:55'),
+	(18, '_wysihtml5_mode', '1', '2019-02-01 11:32:17', '2019-02-01 11:32:17'),
+	(19, 'welcome_message', NULL, '2019-02-01 11:32:17', '2019-02-01 11:32:17'),
+	(20, 'google_analytics', NULL, '2019-02-01 11:32:17', '2019-02-01 11:32:17'),
+	(21, 'map', NULL, '2019-02-01 11:32:17', '2019-02-01 11:32:17'),
+	(22, 'website_description', NULL, '2019-02-01 11:32:17', '2019-02-01 11:32:17'),
+	(23, 'website_keywords', NULL, '2019-02-01 11:32:17', '2019-02-01 11:32:17'),
+	(24, 'image', 'logo.png', '2019-02-01 11:32:18', '2019-10-07 12:35:55'),
+	(25, 'facebook', 'https://www.facebook.com/PollitAnalytics/', '2019-02-01 15:53:22', '2019-04-10 16:41:47'),
+	(26, 'facebook_plugin', '<iframe src="https://www.facebook.com/plugins/page.php?href=http://www.facebook.com/PollitAnalytics&tabs=timeline&width=340&height=400&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true"\r\n                                            height="400" style="border:none;overflow:hidden;width: 350px" scrolling="no"\r\n                                            frameborder="0" allowTransparency="true"></iframe>', '2019-02-01 15:53:22', '2019-04-15 17:45:19'),
+	(27, 'twitter', 'https://twitter.com/PollitAnalytics', '2019-02-01 15:53:22', '2019-02-01 16:07:54'),
+	(28, 'twitter_plugin', '<a class="twitter-timeline"  href="https://twitter.com/PollitAnalytics" data-widget-id="616165029868646400"  data-chrome="noheader nofooter noborders transparent " data-height="350"></a>\r\n            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?\'http\':\'https\';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>', '2019-02-01 15:53:22', '2019-06-24 11:04:34'),
+	(29, 'instagram', 'https://www.instagram.com/pollitanalytics/', '2019-02-01 15:53:22', '2019-04-10 16:41:47'),
+	(30, 'instagram_plugin', NULL, '2019-02-01 15:53:22', '2019-02-01 15:53:22'),
+	(31, 'rent_space_email', NULL, '2019-02-01 15:53:23', '2019-02-01 15:53:23'),
+	(32, 'linkedin', 'https://www.linkedin.com/company/pollitanalytics', '2019-02-01 15:53:23', '2019-04-10 16:41:47'),
+	(33, 'google', NULL, '2019-02-01 15:53:23', '2019-02-01 15:53:23'),
+	(34, 'linkedin_plugin', NULL, '2019-04-10 16:41:47', '2019-04-10 16:41:47'),
+	(35, 'tawk_plugin', '<!--Start of Tawk.to Script-->\r\n<script type="text/javascript">\r\nvar Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();\r\n(function(){\r\nvar s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];\r\ns1.async=true;\r\ns1.src=\'https://embed.tawk.to/5cb8681ad6e05b735b433ab8/default\';\r\ns1.charset=\'UTF-8\';\r\ns1.setAttribute(\'crossorigin\',\'*\');\r\ns0.parentNode.insertBefore(s1,s0);\r\n})();\r\n</script>\r\n<!--End of Tawk.to Script-->', '2019-04-18 13:50:39', '2019-04-18 13:50:39'),
+	(36, 'office_hours', 'Monday - Friday :  8:00AM - 5PM', '2019-05-23 06:02:12', '2019-05-23 06:02:12'),
+	(37, 'paystack_secret_key', NULL, '2019-10-07 12:35:55', '2019-10-07 12:35:55'),
+	(38, 'paystack_public_key', NULL, '2019-10-07 12:35:55', '2019-10-07 12:35:55'),
+	(39, 'newsletter_msg', 'Are you experiencing painful encounters and need spiritual upliftment through God\'s word?\r\n                            Do you want to receive updated news from WOP?', '2019-10-08 19:30:32', '2019-10-08 19:30:32'),
+	(40, 'footer_about_msg', 'Woman on Purpose (“WOP”) is an affiliate of Northern Star Ministries, a leadership ministry\r\n                            founded and lead by Pastors Olatunde and Bola Adepoju. Pastor Bola is the founder of Woman\r\n                            on Purpose', '2019-10-08 19:30:33', '2019-10-08 19:30:33');
+/*!40000 ALTER TABLE `settings` ENABLE KEYS */;
+
+
+-- Dumping structure for table wop_db.throttle
+CREATE TABLE IF NOT EXISTS `throttle` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `user_id` int(10) unsigned DEFAULT NULL,
+  `type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `ip` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `throttle_user_id_index` (`user_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Dumping data for table wop_db.throttle: ~37 rows (approximately)
+/*!40000 ALTER TABLE `throttle` DISABLE KEYS */;
+INSERT INTO `throttle` (`id`, `user_id`, `type`, `ip`, `created_at`, `updated_at`) VALUES
+	(1, NULL, 'global', NULL, '2019-02-05 08:28:50', '2019-02-05 08:28:50'),
+	(2, NULL, 'ip', '197.149.93.190', '2019-02-05 08:28:50', '2019-02-05 08:28:50'),
+	(3, NULL, 'global', NULL, '2019-02-05 08:29:22', '2019-02-05 08:29:22'),
+	(4, NULL, 'ip', '197.149.93.190', '2019-02-05 08:29:22', '2019-02-05 08:29:22'),
+	(5, NULL, 'global', NULL, '2019-02-05 08:30:08', '2019-02-05 08:30:08'),
+	(6, NULL, 'ip', '197.149.93.190', '2019-02-05 08:30:08', '2019-02-05 08:30:08'),
+	(7, NULL, 'global', NULL, '2019-02-05 08:30:26', '2019-02-05 08:30:26'),
+	(8, NULL, 'ip', '197.149.93.190', '2019-02-05 08:30:26', '2019-02-05 08:30:26'),
+	(9, NULL, 'global', NULL, '2019-02-05 08:30:53', '2019-02-05 08:30:53'),
+	(10, NULL, 'ip', '197.149.93.190', '2019-02-05 08:30:53', '2019-02-05 08:30:53'),
+	(11, NULL, 'global', NULL, '2019-02-05 08:31:44', '2019-02-05 08:31:44'),
+	(12, NULL, 'ip', '197.149.93.190', '2019-02-05 08:31:44', '2019-02-05 08:31:44'),
+	(13, NULL, 'global', NULL, '2019-02-05 09:10:44', '2019-02-05 09:10:44'),
+	(14, NULL, 'ip', '197.149.93.190', '2019-02-05 09:10:44', '2019-02-05 09:10:44'),
+	(15, NULL, 'global', NULL, '2019-04-10 15:40:36', '2019-04-10 15:40:36'),
+	(16, NULL, 'ip', '41.58.56.210', '2019-04-10 15:40:36', '2019-04-10 15:40:36'),
+	(17, NULL, 'global', NULL, '2019-04-10 15:40:45', '2019-04-10 15:40:45'),
+	(18, NULL, 'ip', '41.58.56.210', '2019-04-10 15:40:45', '2019-04-10 15:40:45'),
+	(19, NULL, 'global', NULL, '2019-04-10 15:50:09', '2019-04-10 15:50:09'),
+	(20, NULL, 'ip', '41.58.56.210', '2019-04-10 15:50:09', '2019-04-10 15:50:09'),
+	(21, NULL, 'global', NULL, '2019-05-06 07:22:42', '2019-05-06 07:22:42'),
+	(22, NULL, 'ip', '197.149.93.190', '2019-05-06 07:22:42', '2019-05-06 07:22:42'),
+	(23, 1, 'user', NULL, '2019-05-06 07:22:42', '2019-05-06 07:22:42'),
+	(24, NULL, 'global', NULL, '2019-05-23 05:21:11', '2019-05-23 05:21:11'),
+	(25, NULL, 'ip', '41.58.89.204', '2019-05-23 05:21:11', '2019-05-23 05:21:11'),
+	(26, NULL, 'global', NULL, '2019-05-23 05:21:31', '2019-05-23 05:21:31'),
+	(27, NULL, 'ip', '41.58.89.204', '2019-05-23 05:21:31', '2019-05-23 05:21:31'),
+	(28, NULL, 'global', NULL, '2019-10-04 12:52:58', '2019-10-04 12:52:58'),
+	(29, NULL, 'ip', '127.0.0.1', '2019-10-04 12:52:58', '2019-10-04 12:52:58'),
+	(30, 1, 'user', NULL, '2019-10-04 12:52:58', '2019-10-04 12:52:58'),
+	(31, NULL, 'global', NULL, '2019-10-04 12:54:31', '2019-10-04 12:54:31'),
+	(32, NULL, 'ip', '127.0.0.1', '2019-10-04 12:54:31', '2019-10-04 12:54:31'),
+	(33, 1, 'user', NULL, '2019-10-04 12:54:31', '2019-10-04 12:54:31'),
+	(34, NULL, 'global', NULL, '2019-10-04 13:08:33', '2019-10-04 13:08:33'),
+	(35, NULL, 'ip', '127.0.0.1', '2019-10-04 13:08:33', '2019-10-04 13:08:33'),
+	(36, 1, 'user', NULL, '2019-10-04 13:08:33', '2019-10-04 13:08:33'),
+	(37, NULL, 'global', NULL, '2019-10-04 13:12:56', '2019-10-04 13:12:56'),
+	(38, NULL, 'ip', '127.0.0.1', '2019-10-04 13:12:56', '2019-10-04 13:12:56'),
+	(39, 1, 'user', NULL, '2019-10-04 13:12:56', '2019-10-04 13:12:56');
+/*!40000 ALTER TABLE `throttle` ENABLE KEYS */;
+
+
+-- Dumping structure for table wop_db.users
+CREATE TABLE IF NOT EXISTS `users` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `username` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `permissions` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `last_login` timestamp NULL DEFAULT NULL,
+  `first_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `last_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `is_first_login` tinyint(1) DEFAULT 0,
+  `phone` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `address` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `avatar` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `state_id` int(11) DEFAULT NULL,
+  `city_id` int(11) DEFAULT NULL,
+  `age` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `gender` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Dumping data for table wop_db.users: ~3 rows (approximately)
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` (`id`, `email`, `username`, `password`, `permissions`, `last_login`, `first_name`, `last_name`, `created_at`, `updated_at`, `is_first_login`, `phone`, `address`, `avatar`, `state_id`, `city_id`, `age`, `gender`) VALUES
+	(1, 'test@admin.com', 'admin', '$2y$10$UidwtAlmf/1aJlznhXjKPe/Ddms5018I/xvqGo6.hMkkdUVmR75/K', NULL, '2019-10-09 10:57:26', 'Digital', 'Edge', '2019-01-20 19:03:32', '2019-10-09 10:57:26', 0, NULL, NULL, NULL, NULL, NULL, '', ''),
+	(2, 'ade@123.com', NULL, '$2y$10$HP7VrtlOC5L17Ilaxx1hceNvxsYe1hIO.B7XPePkfnvP7aIwI8mFO', '', NULL, 'Adedolapo', 'Oduguwa', '2019-09-18 09:48:13', '2019-09-18 09:48:13', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+	(3, 'test@123.com', NULL, '$2y$10$Ik/SQ4hkvfYSYQYjtJm2e.H/gK9M6hsKP4Xp0SiTdtbY1GSkSMrsa', '', NULL, 'Adedolapo', 'adedolapo', '2019-10-07 11:48:06', '2019-10-07 11:48:06', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
+/*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
+/*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

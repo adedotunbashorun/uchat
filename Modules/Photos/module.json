@@ -1,0 +1,17 @@
+{
+    "name": "Photos",
+    "alias": "photos",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "Modules\\Photos\\Providers\\PhotosServiceProvider",
+        "Modules\\Photos\\Providers\\RouteServiceProvider"
+    ],
+    "aliases": {},
+    "files": [
+        "start.php"
+    ],
+    "requires": []
+}

@@ -1,0 +1,407 @@
+a {
+    color: #deaa48;
+}
+.header .content li i,.header .social li:hover a,.header .single-widget i,.header .button .btn:hover i,.home-slider .single-slider h1 span,.home-slider .owl-carousel .owl-nav div:hover,.enroll .form-group input:hover,.enroll .form-group textarea:hover,.courses .single-course .btn:hover,.courses .single-course h4 span,.courses .single-course h4:hover a,.courses.single .single-info i,.courses.single .course-required h4,.courses.single .course-required ul li span,.team-style2 .team-content .social li:hover a,.team-style2 .team-content .social li.active,.team-details .address li a:hover,.team-details .address li i,.testimonials .main-content:before,
+.testimonials .main-content:after,.testimonials .owl-carousel .owl-nav div:hover,.events .event-content .meta span i,.events .event-content .btn,.events.single .event-content h2:hover a,.blog .blog-content .blog-title:hover a,.blog .blog-info a i,.blog.b-archives.single .blog-info a i,.blog.b-archives.single .blog-title a:hover,.blog.b-archives.single .form-group input:hover,.blog.b-archives.single .form-group textarea:hover,.learnedu-sidebar .search input:hover,.learnedu-sidebar .single-widget h3 span,.learnedu-sidebar .post-info h4:hover a,.learnedu-sidebar .post-info span i,.learnedu-sidebar .course-content a:hover,.learnedu-sidebar .course-content .meta span i,.learnedu-sidebar .calendar li a:hover,
+.learnedu-sidebar .calendar li a:hover i,.learnedu-sidebar .tags ul li a:hover,.error-page .error-inner h2 span,.contact .contact-info .icon i,.contact .contact-info a:hover,.footer .list li i,.footer .useful-links ul li a:hover,.footer .single-news h4 a:hover,.footer .social li a:hover,.footer .copyright a,.section-title h2 span{
+    color: #181a64;
+}
+.class-items .class-item .button .btn, .auth-form .form-group button,.header .nav li:hover a,.header .nav li.active a,.header .nav li .dropdown li:hover a,.header .nav li .dropdown li .dropdown.submenu li:hover a,.header .button .btn,.home-slider .single-slider .btn:before,.home-slider .single-slider .btn.primary,.enroll .form-title,.enroll .form-group .btn:hover,.cta .cta-inner:before,.courses .course-head a,.courses .course-meta .price,.courses .owl-carousel .owl-nav div:hover,.courses.archives .pagination li:hover a,.courses.archives .pagination li.active a,.courses.single .course-price .btn,.courses.single .course-feature h4:before,.team .button .btn,.team-style2 .single-team .image:before,.team-details .member-detail .social li a:hover,.team-details .member-detail .social li a.active,.team-details .progress .progress-bar,.team-details .progress .percent,.events .single-event .head .btn,.events .event-content .btn:before,.events .owl-carousel .owl-nav div:hover,.events.archives .pagination li:hover a,
+.events.archives .pagination li.active a,.events.single .social li:hover a,.events.single .owl-carousel .owl-nav div:hover,.fun-facts::before,.blog .blog-head .date,.blog .blog-content .btn,.blog .owl-carousel .owl-nav div:hover,.blog .owl-dots .owl-dot span,.blog .owl-dots .owl-dot.active span,.blog.b-archives .pagination li:hover a,
+.blog.b-archives .pagination li.active a,.blog.b-archives.single .b-gallery .owl-nav div:hover,.blog.b-archives.single .blog-bottom .share li:hover a,.blog.b-archives.single .blog-bottom .prev-next li a,.blog.b-archives.single .form-group button,.learnedu-sidebar .search .button,.about-us .single-image .btn:hover,.about-us .about-text h2:before,.about-us .about-text .btn,.faq .panel.active .faq-title a,.error-page .search-form .btn,.contact .form-head .form-group button,.slicknav_nav,.footer .single-widget h2:before,.footer .newsletter .button,#scrollUp,.breadcrumbs ul li.active a{
+    background: #181a64;
+}
+.courses.single .course-required ul li span,.testimonials .single-testimonial:hover img,
+.testimonials .owl-item.center.active .single-testimonial img,.learnedu-sidebar .tags ul li a:hover{
+    border-color:#deaa48;
+}
+.blog.b-archives.single .blockquote,.learnedu-sidebar .single-widget h3{
+    border-left-color:#181a64;
+}
+.team .team-hover {
+    background: rgba(0, 177, 106, 0.9);
+}
+
+.footer {
+    background-image: url(../images/footer.jpg);
+}
+
+.book_preload {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: #f5f5f5;
+    z-index: 999999;
+}
+
+.book__page {
+    background: #deaa48;
+}
+
+.footer .single-news h4 a:hover, .header .single-widget i,.home-slider .single-slider h1 span, .footer .list li i, .footer .single-widget h2:before, .footer .copyright a,.section-title h2 span{
+    color: #deaa48 !important;
+}
+
+.single-widget h2:before,.breadcrumbs ul li.active a,.courses .course-head a {
+    background: #deaa48 !important;
+}
+
+.footer .social {
+    text-align: left;
+    margin-top: 20px;
+}
+
+.header .logo {
+    float: left;
+    margin-top: 18px;
+}
+
+.testimonials .section-title h2, .testimonials .section-title p {
+    color: inherit;
+}
+
+.single-widget.latest-news .view-all{
+    display: block;
+    margin-top: 20px;
+}
+
+.section {
+    padding: 60px 0;
+}
+
+.footer-top {
+    padding-top: 0 !important;
+    padding-bottom: 30px !important;
+}
+
+.learnedu-sidebar .post-img {
+    float: none;
+    width: 120px;
+    margin-right: 10px;
+}
+
+.learnedu-sidebar .single-post{
+    display: flex;
+}
+
+.courses .single-course h2 {
+    margin-bottom: 15px;
+    font-size: 30px;
+}
+
+.learnedu-sidebar {
+    margin-top: 0 !important;
+}
+
+.learnedu-sidebar .single-widget {
+    margin-top: 0 !important;
+}
+
+.courses-single .course-title{
+    margin: 30px 0;
+}
+
+.courses-single .single-info {
+    float: left;
+    margin-right: 20px;
+    text-align: center;
+    overflow: hidden;
+}
+.courses-single .single-info:last-child{
+    margin-right: 0px;
+}
+.courses-single .single-info img {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    float: left;
+    margin-right: 12px;
+}
+.courses-single .single-info i {
+    float: left;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 100%;
+    margin-right: 15px;
+    font-size: 29px;
+    border: 1px solid #e7e7e7;
+    font-size: 15px;
+}
+.courses-single .single-info h4 {
+    font-size: 14px;
+    float: left;
+    margin: 0;
+    text-align: left;
+    text-transform: uppercase;
+}
+.courses-single .single-info h4 span {
+    display: block;
+    color: #777;
+    font-weight: 400;
+    text-transform: capitalize;
+    font-size: 14px;
+    margin-top: 5px;
+}
+.courses-single .single-info h4 span:hover{
+    color:#00B06A;
+}
+.courses-single .single-info h4 a{
+    color: #777;
+    font-weight:400;
+}
+
+.courses-single .course-details{
+    margin: 30px 0 0;
+}
+
+.courses-single .course-details .faq-body p {
+    margin-bottom: 20px;
+}
+
+.courses-single .course-image img{
+    width: 100%;
+}
+
+.single-widget h3 {
+    border-left-color: #181a64 !important;
+}
+
+.auth-form .form-group .button{
+    margin-top:20px;
+}
+.auth-form .form-group button {
+    color: #fff;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+.auth-form .form-group button:before{
+    background:#deaa48;
+}
+.auth-form .form-group button:hover{
+    background:transparent;
+}
+
+.auth-form .form-control {
+    display: block;
+    width: 100%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0;
+}
+
+.register .nav-tabs .nav-link {
+    color: #181a64;
+    font-size: 16px;
+}
+
+.form-check-input {
+    position: absolute;
+    margin-top: .25rem;
+    margin-left: 0;
+}
+
+.success-notification{
+    text-align:center;
+    padding-top:3rem;
+}
+
+.success-notification i{
+    font-size: 4rem;
+}
+
+.success-notification p{
+    font-size: 14px;
+}
+
+.header .button .btn-login {
+    background: #ffff;
+    color: #252525;
+}
+
+.header .button .btn:hover {
+    color: #deaa48;
+    background: transparent;
+    border-color: #e6e6e6;
+}
+
+.class-items .class-item{
+    border-bottom: 1px solid #e6e6e6;
+    margin-bottom: 25px;
+    padding-bottom: 25px;
+    overflow: hidden;
+}
+
+.class-items .class-item:last-child{
+    border: none;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+.class-items .class-item .class-item-title{
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #aba9a9;
+    margin-bottom: 10px;
+}
+
+.class-items .class-item .instructor img {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    margin-bottom: 5px;
+
+}
+
+.class-items .class-item .button .btn {
+    margin-top: 8px;
+    color: #fff;
+    border-radius: 50px;
+    box-shadow: none;
+    border: 1px solid transparent;
+    padding: 8px 22px;
+    font-size: 13px;
+}
+
+.class-items .class-item .button .btn:hover {
+    color: rgb(222, 170, 72);
+    background: transparent;
+    border-color: rgb(230, 230, 230);
+}
+
+.class-items .class-item .price {
+    font-size: 18px;
+}
+
+.faq .panel.active .faq-title a{
+    background: #868e96 !important;
+}
+
+.checkout-item{
+    margin-bottom: 25px;
+}
+
+.checkout-item .checkout-item-title h3 {
+    font-size: 20px;
+    padding-left: 10px;
+    border-left: 2px solid transparent;
+    margin-bottom: 20px;
+    border-left-color: #deaa48;
+}
+
+#preloader{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999999;
+    background-color: rgba(255, 255, 255, 1);
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.checkout-item .payment-button .btn {
+    margin-top: 8px;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: none;
+    border: 1px solid transparent;
+    background: #181a64;
+    display:block;
+    width: 100%;
+    font-size: 18px;
+}
+
+.checkout-item .payment-button .btn:hover {
+    color: rgb(222, 170, 72);
+    background: transparent;
+    border-color: rgb(230, 230, 230);
+}
+
+.checkout-item .total-table .amount{
+ font-size: 18px;
+}
+
+.checkout-item .total-table .title{
+    text-transform: uppercase;
+    text-align: right;
+}
+
+.checkout-item.has-border {
+    border-bottom: 1px solid #e6e6e6;
+    margin-bottom: 0;
+}
+
+.checkout-item.has-border .class-items .class-item {
+    margin-bottom: 0;
+}
+
+.learnedu-sidebar .single-widget.account h3 {
+    font-size: 15px;
+}
+
+.account-page-title{
+    margin-bottom:20px;
+    padding-bottom:20px;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.account-page-title h3{
+    margin-bottom:10px;
+}
+
+.learnedu-sidebar .single-widget.categories ul li a:hover {
+    color: #deaa48;
+}
+
+.btn-brand {
+    color: #fff;
+    background-color: #deaa48 !important;
+    border-color: #deaa48 !important;
+}
+
+.button .btn-brand {
+    color: #fff;
+    background: #deaa48 !important;
+    border-color: #deaa48 !important;
+}
+
+.button .btn-brand-alt {
+    color: #fff ;
+    background: #181a64 !important;
+    border-color: #181a64 !important;
+}
+
+.button .btn.border-radius{
+    border-radius: 50px;
+}
+
+/*.button .btn {
+    border: 1px solid transparent;
+}*/
+
+.button .btn:hover {
+    color: rgb(222, 170, 72);
+    background: transparent;
+    border-color: rgb(230, 230, 230);
+}
+
+/*
+.swal-button {
+    background-color: #deaa48;
+    color: #fff;
+}
+
+.swal-button--danger {
+    background-color: #e64942 !important;
+}
+
+.swal-button--danger:not([disabled]):hover {
+    background-color: #df4740 !important;
+}*/

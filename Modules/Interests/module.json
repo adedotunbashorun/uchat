@@ -1,0 +1,17 @@
+{
+    "name": "Interests",
+    "alias": "interests",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 1,
+    "providers": [
+        "Modules\\Interests\\Providers\\InterestsServiceProvider",
+        "Modules\\Interests\\Providers\\RouteServiceProvider"
+    ],
+    "aliases": {},
+    "files": [
+        "start.php"
+    ],
+    "requires": []
+}

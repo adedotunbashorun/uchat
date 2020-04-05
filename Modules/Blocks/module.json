@@ -1,0 +1,17 @@
+{
+    "name": "Blocks",
+    "alias": "blocks",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 15,
+    "providers": [
+        "Modules\\Blocks\\Providers\\BlocksServiceProvider",
+        "Modules\\Blocks\\Providers\\RouteServiceProvider"
+    ],
+    "aliases": {},
+    "files": [
+        "start.php"
+    ],
+    "requires": []
+}

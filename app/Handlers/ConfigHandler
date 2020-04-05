@@ -1,0 +1,11 @@
+<?php
+
+namespace App\Hanlers;
+
+class ConfigHandler {
+
+    public function userField()
+    {
+        return;
+    }
+}

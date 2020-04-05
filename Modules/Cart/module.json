@@ -1,0 +1,17 @@
+{
+    "name": "Cart",
+    "alias": "cart",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 1,
+    "providers": [
+        "Modules\\Cart\\Providers\\CartServiceProvider",
+        "Modules\\Cart\\Providers\\RouteServiceProvider"
+    ],
+    "aliases": {},
+    "files": [
+        "start.php"
+    ],
+    "requires": []
+}

@@ -1,0 +1,28 @@
+{
+    "name": "Core",
+    "alias": "core",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "Modules\\Core\\Providers\\CoreServiceProvider",
+        "Collective\\Html\\HtmlServiceProvider",
+        "Kris\\LaravelFormBuilder\\FormBuilderServiceProvider",
+        "Yajra\\Datatables\\DatatablesServiceProvider"
+    ],
+    "aliases":{
+        "Form": "Collective\\Html\\FormFacade",
+        "HTML": "Collective\\Html\\HtmlFacade",
+        "FormBuilder" : "Kris\\LaravelFormBuilder\\Facades\\FormBuilder",
+        "Notification": "Krucas\\Notification\\Facades\\Notification",
+        "MyApp" : "Modules\\Core\\Facades\\MyApp",
+        "Datatables" : "Yajra\\Datatables\\Facades\\Datatables"
+    },
+    "files": [
+        "start.php",
+        "helpers.php",
+        "composers.php"
+    ],
+    "requires": []
+}

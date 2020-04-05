@@ -1,0 +1,778 @@
+-- --------------------------------------------------------
+-- Host:                         127.0.0.1
+-- Server version:               10.2.14-MariaDB-log - mariadb.org binary distribution
+-- Server OS:                    Win64
+-- HeidiSQL Version:             9.3.0.4984
+-- --------------------------------------------------------
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET NAMES utf8mb4 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+
+-- Dumping structure for table uotcareers_db.activations
+CREATE TABLE IF NOT EXISTS `activations` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `user_id` int(10) unsigned NOT NULL,
+  `code` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `completed` tinyint(1) NOT NULL DEFAULT 0,
+  `completed_at` timestamp NULL DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Dumping data for table uotcareers_db.activations: ~3 rows (approximately)
+/*!40000 ALTER TABLE `activations` DISABLE KEYS */;
+INSERT INTO `activations` (`id`, `user_id`, `code`, `completed`, `completed_at`, `created_at`, `updated_at`) VALUES
+	(1, 1, 'gsE3r34bbYNYtg8X1kPV61njXr9oZwP8', 1, '2019-01-20 19:03:33', '2019-01-20 19:03:33', '2019-01-20 19:03:33'),
+	(2, 2, 'LWry63nwK3NganMcEIy0MZkFLKNTpL88', 1, '2019-09-18 09:48:13', '2019-09-18 09:48:13', '2019-09-18 09:48:13'),
+	(3, 3, '60B3Egveaa90qzkSSVqFkvqtUqYYv61Q', 1, '2019-10-07 11:48:06', '2019-10-07 11:48:06', '2019-10-07 11:48:06');
+/*!40000 ALTER TABLE `activations` ENABLE KEYS */;
+
+
+-- Dumping structure for table uotcareers_db.albums
+CREATE TABLE IF NOT EXISTS `albums` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `slug` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` tinyint(1) NOT NULL DEFAULT 1,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Dumping data for table uotcareers_db.albums: ~2 rows (approximately)
+/*!40000 ALTER TABLE `albums` DISABLE KEYS */;
+INSERT INTO `albums` (`id`, `title`, `slug`, `image`, `status`, `created_at`, `updated_at`) VALUES
+	(1, 'Fun fair', 'fun-fair', NULL, 1, '2019-10-09 12:24:50', '2019-10-09 12:24:50'),
+	(2, 'TMO 2018', 'tmo-2018', 'message-3_1.jpg', 1, '2019-10-09 12:54:36', '2019-10-09 12:54:36');
+/*!40000 ALTER TABLE `albums` ENABLE KEYS */;
+
+
+-- Dumping structure for table uotcareers_db.banners
+CREATE TABLE IF NOT EXISTS `banners` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `caption` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `body` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `link` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `link_label` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` tinyint(1) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `position` int(11) DEFAULT NULL,
+  `body_font_size` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Dumping data for table uotcareers_db.banners: ~2 rows (approximately)
+/*!40000 ALTER TABLE `banners` DISABLE KEYS */;
+INSERT INTO `banners` (`id`, `caption`, `image`, `body`, `link`, `link_label`, `status`, `created_at`, `updated_at`, `position`, `body_font_size`) VALUES
+	(1, 'Don\'t Train Hard... <br>Train <span>Right</span>', 'slider-bg1.jpg', '<!--[if gte mso 9]><xml>\r\n <o:OfficeDocumentSettings>\r\n  <o:AllowPNG/>\r\n </o:OfficeDocumentSettings>\r\n</xml><![endif]--><!--[if gte mso 9]><xml>\r\n <w:WordDocument>\r\n  <w:View>Normal</w:View>\r\n  <w:Zoom>0</w:Zoom>\r\n  <w:TrackMoves/>\r\n  <w:TrackFormatting/>\r\n  <w:PunctuationKerning/>\r\n  <w:ValidateAgainstSchemas/>\r\n  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>\r\n  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>\r\n  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>\r\n  <w:DoNotPromoteQF/>\r\n  <w:LidThemeOther>EN-US</w:LidThemeOther>\r\n  <w:LidThemeAsian>X-NONE</w:LidThemeAsian>\r\n  <w:LidThemeComplexScript>X-NONE</w:LidThemeComplexScript>\r\n  <w:Compatibility>\r\n   <w:BreakWrappedTables/>\r\n   <w:SnapToGridInCell/>\r\n   <w:WrapTextWithPunct/>\r\n   <w:UseAsianBreakRules/>\r\n   <w:DontGrowAutofit/>\r\n   <w:SplitPgBreakAndParaMark/>\r\n   <w:EnableOpenTypeKerning/>\r\n   <w:DontFlipMirrorIndents/>\r\n   <w:OverrideTableStyleHps/>\r\n  </w:Compatibility>\r\n  <m:mathPr>\r\n   <m:mathFont m:val="Cambria Math"/>\r\n   <m:brkBin m:val="before"/>\r\n   <m:brkBinSub m:val="--"/>\r\n   <m:smallFrac m:val="off"/>\r\n   <m:dispDef/>\r\n   <m:lMargin m:val="0"/>\r\n   <m:rMargin m:val="0"/>\r\n   <m:defJc m:val="centerGroup"/>\r\n   <m:wrapIndent m:val="1440"/>\r\n   <m:intLim m:val="subSup"/>\r\n   <m:naryLim m:val="undOvr"/>\r\n  </m:mathPr></w:WordDocument>\r\n</xml><![endif]--><!--[if gte mso 9]><xml>\r\n <w:LatentStyles DefLockedState="false" DefUnhideWhenUsed="false"\r\n  DefSemiHidden="false" DefQFormat="false" DefPriority="99"\r\n  LatentStyleCount="371">\r\n  <w:LsdException Locked="false" Priority="0" QFormat="true" Name="Normal"/>\r\n  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 1"/>\r\n  <w:LsdException Locked="false" Priority="9" SemiHidden="true"\r\n   UnhideWhenUsed="true" QFormat="true" Name="heading 2"/>\r\n  <w:LsdException Locked="false" Priority="9" SemiHidden="true"\r\n   UnhideWhenUsed="true" QFormat="true" Name="heading 3"/>\r\n  <w:LsdException Locked="false" Priority="9" SemiHidden="true"\r\n   UnhideWhenUsed="true" QFormat="true" Name="heading 4"/>\r\n  <w:LsdException Locked="false" Priority="9" SemiHidden="true"\r\n   UnhideWhenUsed="true" QFormat="true" Name="heading 5"/>\r\n  <w:LsdException Locked="false" Priority="9" SemiHidden="true"\r\n   UnhideWhenUsed="true" QFormat="true" Name="heading 6"/>\r\n  <w:LsdException Locked="false" Priority="9" SemiHidden="true"\r\n   UnhideWhenUsed="true" QFormat="true" Name="heading 7"/>\r\n  <w:LsdException Locked="false" Priority="9" SemiHidden="true"\r\n   UnhideWhenUsed="true" QFormat="true" Name="heading 8"/>\r\n  <w:LsdException Locked="false" Priority="9" SemiHidden="true"\r\n   UnhideWhenUsed="true" QFormat="true" Name="heading 9"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="index 1"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="index 2"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="index 3"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="index 4"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="index 5"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="index 6"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="index 7"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="index 8"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="index 9"/>\r\n  <w:LsdException Locked="false" Priority="39" SemiHidden="true"\r\n   UnhideWhenUsed="true" Name="toc 1"/>\r\n  <w:LsdException Locked="false" Priority="39" SemiHidden="true"\r\n   UnhideWhenUsed="true" Name="toc 2"/>\r\n  <w:LsdException Locked="false" Priority="39" SemiHidden="true"\r\n   UnhideWhenUsed="true" Name="toc 3"/>\r\n  <w:LsdException Locked="false" Priority="39" SemiHidden="true"\r\n   UnhideWhenUsed="true" Name="toc 4"/>\r\n  <w:LsdException Locked="false" Priority="39" SemiHidden="true"\r\n   UnhideWhenUsed="true" Name="toc 5"/>\r\n  <w:LsdException Locked="false" Priority="39" SemiHidden="true"\r\n   UnhideWhenUsed="true" Name="toc 6"/>\r\n  <w:LsdException Locked="false" Priority="39" SemiHidden="true"\r\n   UnhideWhenUsed="true" Name="toc 7"/>\r\n  <w:LsdException Locked="false" Priority="39" SemiHidden="true"\r\n   UnhideWhenUsed="true" Name="toc 8"/>\r\n  <w:LsdException Locked="false" Priority="39" SemiHidden="true"\r\n   UnhideWhenUsed="true" Name="toc 9"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Normal Indent"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="footnote text"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="annotation text"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="header"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="footer"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="index heading"/>\r\n  <w:LsdException Locked="false" Priority="35" SemiHidden="true"\r\n   UnhideWhenUsed="true" QFormat="true" Name="caption"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="table of figures"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="envelope address"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="envelope return"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="footnote reference"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="annotation reference"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="line number"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="page number"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="endnote reference"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="endnote text"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="table of authorities"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="macro"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="toa heading"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="List"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="List Bullet"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="List Number"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="List 2"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="List 3"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="List 4"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="List 5"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="List Bullet 2"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="List Bullet 3"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="List Bullet 4"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="List Bullet 5"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="List Number 2"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="List Number 3"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="List Number 4"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="List Number 5"/>\r\n  <w:LsdException Locked="false" Priority="10" QFormat="true" Name="Title"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Closing"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Signature"/>\r\n  <w:LsdException Locked="false" Priority="1" SemiHidden="true"\r\n   UnhideWhenUsed="true" Name="Default Paragraph Font"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Body Text"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Body Text Indent"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="List Continue"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="List Continue 2"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="List Continue 3"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="List Continue 4"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="List Continue 5"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Message Header"/>\r\n  <w:LsdException Locked="false" Priority="11" QFormat="true" Name="Subtitle"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Salutation"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Date"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Body Text First Indent"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Body Text First Indent 2"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Note Heading"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Body Text 2"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Body Text 3"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Body Text Indent 2"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Body Text Indent 3"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Block Text"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Hyperlink"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="FollowedHyperlink"/>\r\n  <w:LsdException Locked="false" Priority="22" QFormat="true" Name="Strong"/>\r\n  <w:LsdException Locked="false" Priority="20" QFormat="true" Name="Emphasis"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Document Map"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Plain Text"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="E-mail Signature"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="HTML Top of Form"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="HTML Bottom of Form"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Normal (Web)"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="HTML Acronym"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="HTML Address"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="HTML Cite"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="HTML Code"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="HTML Definition"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="HTML Keyboard"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="HTML Preformatted"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="HTML Sample"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="HTML Typewriter"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="HTML Variable"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Normal Table"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="annotation subject"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="No List"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Outline List 1"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Outline List 2"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Outline List 3"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Table Simple 1"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Table Simple 2"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Table Simple 3"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Table Classic 1"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Table Classic 2"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Table Classic 3"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Table Classic 4"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Table Colorful 1"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Table Colorful 2"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Table Colorful 3"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Table Columns 1"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Table Columns 2"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Table Columns 3"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Table Columns 4"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Table Columns 5"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Table Grid 1"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Table Grid 2"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Table Grid 3"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Table Grid 4"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Table Grid 5"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Table Grid 6"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Table Grid 7"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Table Grid 8"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Table List 1"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Table List 2"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Table List 3"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Table List 4"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Table List 5"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Table List 6"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Table List 7"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Table List 8"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Table 3D effects 1"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Table 3D effects 2"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Table 3D effects 3"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Table Contemporary"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Table Elegant"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Table Professional"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Table Subtle 1"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Table Subtle 2"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Table Web 1"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Table Web 2"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Table Web 3"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Balloon Text"/>\r\n  <w:LsdException Locked="false" Priority="39" Name="Table Grid"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Table Theme"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" Name="Placeholder Text"/>\r\n  <w:LsdException Locked="false" Priority="1" QFormat="true" Name="No Spacing"/>\r\n  <w:LsdException Locked="false" Priority="60" Name="Light Shading"/>\r\n  <w:LsdException Locked="false" Priority="61" Name="Light List"/>\r\n  <w:LsdException Locked="false" Priority="62" Name="Light Grid"/>\r\n  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1"/>\r\n  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2"/>\r\n  <w:LsdException Locked="false" Priority="65" Name="Medium List 1"/>\r\n  <w:LsdException Locked="false" Priority="66" Name="Medium List 2"/>\r\n  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1"/>\r\n  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2"/>\r\n  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3"/>\r\n  <w:LsdException Locked="false" Priority="70" Name="Dark List"/>\r\n  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading"/>\r\n  <w:LsdException Locked="false" Priority="72" Name="Colorful List"/>\r\n  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid"/>\r\n  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 1"/>\r\n  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 1"/>\r\n  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 1"/>\r\n  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 1"/>\r\n  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 1"/>\r\n  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 1"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" Name="Revision"/>\r\n  <w:LsdException Locked="false" Priority="34" QFormat="true"\r\n   Name="List Paragraph"/>\r\n  <w:LsdException Locked="false" Priority="29" QFormat="true" Name="Quote"/>\r\n  <w:LsdException Locked="false" Priority="30" QFormat="true"\r\n   Name="Intense Quote"/>\r\n  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 1"/>\r\n  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 1"/>\r\n  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 1"/>\r\n  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 1"/>\r\n  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 1"/>\r\n  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 1"/>\r\n  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 1"/>\r\n  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 1"/>\r\n  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 2"/>\r\n  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 2"/>\r\n  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 2"/>\r\n  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 2"/>\r\n  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 2"/>\r\n  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 2"/>\r\n  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 2"/>\r\n  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 2"/>\r\n  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 2"/>\r\n  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 2"/>\r\n  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 2"/>\r\n  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 2"/>\r\n  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 2"/>\r\n  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 2"/>\r\n  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 3"/>\r\n  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 3"/>\r\n  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 3"/>\r\n  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 3"/>\r\n  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 3"/>\r\n  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 3"/>\r\n  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 3"/>\r\n  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 3"/>\r\n  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 3"/>\r\n  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 3"/>\r\n  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 3"/>\r\n  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 3"/>\r\n  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 3"/>\r\n  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 3"/>\r\n  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 4"/>\r\n  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 4"/>\r\n  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 4"/>\r\n  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 4"/>\r\n  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 4"/>\r\n  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 4"/>\r\n  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 4"/>\r\n  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 4"/>\r\n  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 4"/>\r\n  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 4"/>\r\n  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 4"/>\r\n  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 4"/>\r\n  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 4"/>\r\n  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 4"/>\r\n  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 5"/>\r\n  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 5"/>\r\n  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 5"/>\r\n  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 5"/>\r\n  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 5"/>\r\n  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 5"/>\r\n  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 5"/>\r\n  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 5"/>\r\n  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 5"/>\r\n  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 5"/>\r\n  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 5"/>\r\n  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 5"/>\r\n  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 5"/>\r\n  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 5"/>\r\n  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 6"/>\r\n  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 6"/>\r\n  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 6"/>\r\n  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 6"/>\r\n  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 6"/>\r\n  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 6"/>\r\n  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 6"/>\r\n  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 6"/>\r\n  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 6"/>\r\n  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 6"/>\r\n  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 6"/>\r\n  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 6"/>\r\n  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 6"/>\r\n  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 6"/>\r\n  <w:LsdException Locked="false" Priority="19" QFormat="true"\r\n   Name="Subtle Emphasis"/>\r\n  <w:LsdException Locked="false" Priority="21" QFormat="true"\r\n   Name="Intense Emphasis"/>\r\n  <w:LsdException Locked="false" Priority="31" QFormat="true"\r\n   Name="Subtle Reference"/>\r\n  <w:LsdException Locked="false" Priority="32" QFormat="true"\r\n   Name="Intense Reference"/>\r\n  <w:LsdException Locked="false" Priority="33" QFormat="true" Name="Book Title"/>\r\n  <w:LsdException Locked="false" Priority="37" SemiHidden="true"\r\n   UnhideWhenUsed="true" Name="Bibliography"/>\r\n  <w:LsdException Locked="false" Priority="39" SemiHidden="true"\r\n   UnhideWhenUsed="true" QFormat="true" Name="TOC Heading"/>\r\n  <w:LsdException Locked="false" Priority="41" Name="Plain Table 1"/>\r\n  <w:LsdException Locked="false" Priority="42" Name="Plain Table 2"/>\r\n  <w:LsdException Locked="false" Priority="43" Name="Plain Table 3"/>\r\n  <w:LsdException Locked="false" Priority="44" Name="Plain Table 4"/>\r\n  <w:LsdException Locked="false" Priority="45" Name="Plain Table 5"/>\r\n  <w:LsdException Locked="false" Priority="40" Name="Grid Table Light"/>\r\n  <w:LsdException Locked="false" Priority="46" Name="Grid Table 1 Light"/>\r\n  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2"/>\r\n  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3"/>\r\n  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4"/>\r\n  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark"/>\r\n  <w:LsdException Locked="false" Priority="51" Name="Grid Table 6 Colorful"/>\r\n  <w:LsdException Locked="false" Priority="52" Name="Grid Table 7 Colorful"/>\r\n  <w:LsdException Locked="false" Priority="46"\r\n   Name="Grid Table 1 Light Accent 1"/>\r\n  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 1"/>\r\n  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 1"/>\r\n  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 1"/>\r\n  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 1"/>\r\n  <w:LsdException Locked="false" Priority="51"\r\n   Name="Grid Table 6 Colorful Accent 1"/>\r\n  <w:LsdException Locked="false" Priority="52"\r\n   Name="Grid Table 7 Colorful Accent 1"/>\r\n  <w:LsdException Locked="false" Priority="46"\r\n   Name="Grid Table 1 Light Accent 2"/>\r\n  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 2"/>\r\n  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 2"/>\r\n  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 2"/>\r\n  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 2"/>\r\n  <w:LsdException Locked="false" Priority="51"\r\n   Name="Grid Table 6 Colorful Accent 2"/>\r\n  <w:LsdException Locked="false" Priority="52"\r\n   Name="Grid Table 7 Colorful Accent 2"/>\r\n  <w:LsdException Locked="false" Priority="46"\r\n   Name="Grid Table 1 Light Accent 3"/>\r\n  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 3"/>\r\n  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 3"/>\r\n  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 3"/>\r\n  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 3"/>\r\n  <w:LsdException Locked="false" Priority="51"\r\n   Name="Grid Table 6 Colorful Accent 3"/>\r\n  <w:LsdException Locked="false" Priority="52"\r\n   Name="Grid Table 7 Colorful Accent 3"/>\r\n  <w:LsdException Locked="false" Priority="46"\r\n   Name="Grid Table 1 Light Accent 4"/>\r\n  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 4"/>\r\n  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 4"/>\r\n  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 4"/>\r\n  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 4"/>\r\n  <w:LsdException Locked="false" Priority="51"\r\n   Name="Grid Table 6 Colorful Accent 4"/>\r\n  <w:LsdException Locked="false" Priority="52"\r\n   Name="Grid Table 7 Colorful Accent 4"/>\r\n  <w:LsdException Locked="false" Priority="46"\r\n   Name="Grid Table 1 Light Accent 5"/>\r\n  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 5"/>\r\n  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 5"/>\r\n  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 5"/>\r\n  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 5"/>\r\n  <w:LsdException Locked="false" Priority="51"\r\n   Name="Grid Table 6 Colorful Accent 5"/>\r\n  <w:LsdException Locked="false" Priority="52"\r\n   Name="Grid Table 7 Colorful Accent 5"/>\r\n  <w:LsdException Locked="false" Priority="46"\r\n   Name="Grid Table 1 Light Accent 6"/>\r\n  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 6"/>\r\n  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 6"/>\r\n  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 6"/>\r\n  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 6"/>\r\n  <w:LsdException Locked="false" Priority="51"\r\n   Name="Grid Table 6 Colorful Accent 6"/>\r\n  <w:LsdException Locked="false" Priority="52"\r\n   Name="Grid Table 7 Colorful Accent 6"/>\r\n  <w:LsdException Locked="false" Priority="46" Name="List Table 1 Light"/>\r\n  <w:LsdException Locked="false" Priority="47" Name="List Table 2"/>\r\n  <w:LsdException Locked="false" Priority="48" Name="List Table 3"/>\r\n  <w:LsdException Locked="false" Priority="49" Name="List Table 4"/>\r\n  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark"/>\r\n  <w:LsdException Locked="false" Priority="51" Name="List Table 6 Colorful"/>\r\n  <w:LsdException Locked="false" Priority="52" Name="List Table 7 Colorful"/>\r\n  <w:LsdException Locked="false" Priority="46"\r\n   Name="List Table 1 Light Accent 1"/>\r\n  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 1"/>\r\n  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 1"/>\r\n  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 1"/>\r\n  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 1"/>\r\n  <w:LsdException Locked="false" Priority="51"\r\n   Name="List Table 6 Colorful Accent 1"/>\r\n  <w:LsdException Locked="false" Priority="52"\r\n   Name="List Table 7 Colorful Accent 1"/>\r\n  <w:LsdException Locked="false" Priority="46"\r\n   Name="List Table 1 Light Accent 2"/>\r\n  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 2"/>\r\n  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 2"/>\r\n  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 2"/>\r\n  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 2"/>\r\n  <w:LsdException Locked="false" Priority="51"\r\n   Name="List Table 6 Colorful Accent 2"/>\r\n  <w:LsdException Locked="false" Priority="52"\r\n   Name="List Table 7 Colorful Accent 2"/>\r\n  <w:LsdException Locked="false" Priority="46"\r\n   Name="List Table 1 Light Accent 3"/>\r\n  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 3"/>\r\n  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 3"/>\r\n  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 3"/>\r\n  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 3"/>\r\n  <w:LsdException Locked="false" Priority="51"\r\n   Name="List Table 6 Colorful Accent 3"/>\r\n  <w:LsdException Locked="false" Priority="52"\r\n   Name="List Table 7 Colorful Accent 3"/>\r\n  <w:LsdException Locked="false" Priority="46"\r\n   Name="List Table 1 Light Accent 4"/>\r\n  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 4"/>\r\n  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 4"/>\r\n  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 4"/>\r\n  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 4"/>\r\n  <w:LsdException Locked="false" Priority="51"\r\n   Name="List Table 6 Colorful Accent 4"/>\r\n  <w:LsdException Locked="false" Priority="52"\r\n   Name="List Table 7 Colorful Accent 4"/>\r\n  <w:LsdException Locked="false" Priority="46"\r\n   Name="List Table 1 Light Accent 5"/>\r\n  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 5"/>\r\n  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 5"/>\r\n  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 5"/>\r\n  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 5"/>\r\n  <w:LsdException Locked="false" Priority="51"\r\n   Name="List Table 6 Colorful Accent 5"/>\r\n  <w:LsdException Locked="false" Priority="52"\r\n   Name="List Table 7 Colorful Accent 5"/>\r\n  <w:LsdException Locked="false" Priority="46"\r\n   Name="List Table 1 Light Accent 6"/>\r\n  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 6"/>\r\n  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 6"/>\r\n  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 6"/>\r\n  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 6"/>\r\n  <w:LsdException Locked="false" Priority="51"\r\n   Name="List Table 6 Colorful Accent 6"/>\r\n  <w:LsdException Locked="false" Priority="52"\r\n   Name="List Table 7 Colorful Accent 6"/>\r\n </w:LatentStyles>\r\n</xml><![endif]--><!--[if gte mso 10]>\r\n<style>\r\n /* Style Definitions */\r\n table.MsoNormalTable\r\n	{mso-style-name:"Table Normal";\r\n	mso-tstyle-rowband-size:0;\r\n	mso-tstyle-colband-size:0;\r\n	mso-style-noshow:yes;\r\n	mso-style-priority:99;\r\n	mso-style-parent:"";\r\n	mso-padding-alt:0in 5.4pt 0in 5.4pt;\r\n	mso-para-margin-top:0in;\r\n	mso-para-margin-right:0in;\r\n	mso-para-margin-bottom:8.0pt;\r\n	mso-para-margin-left:0in;\r\n	line-height:107%;\r\n	mso-pagination:widow-orphan;\r\n	font-size:11.0pt;\r\n	font-family:"Calibri",sans-serif;\r\n	mso-ascii-font-family:Calibri;\r\n	mso-ascii-theme-font:minor-latin;\r\n	mso-hansi-font-family:Calibri;\r\n	mso-hansi-theme-font:minor-latin;\r\n	mso-bidi-font-family:"Times New Roman";\r\n	mso-bidi-theme-font:minor-bidi;}\r\n</style>\r\n<![endif]-->\r\n\r\n<p class="MsoNormal" style="text-align:justify">We offer full pack IT career services\r\nfor specific core areas such as IT Audit/Risk compliance, Cybersecurity,\r\nDigital BA, Agile scrum, General BA & ERP BA.</p>', '/about-us', 'Learn More', 1, '2019-10-07 13:59:15', '2019-10-11 05:21:41', NULL, 'large'),
+	(2, 'Another Banner Caption Goes Here', 'banner-2.jpg', '<p><!--[if gte mso 9]><xml>\r\n <o:OfficeDocumentSettings>\r\n  <o:AllowPNG/>\r\n </o:OfficeDocumentSettings>\r\n</xml><![endif]--><!--[if gte mso 9]><xml>\r\n <w:WordDocument>\r\n  <w:View>Normal</w:View>\r\n  <w:Zoom>0</w:Zoom>\r\n  <w:TrackMoves/>\r\n  <w:TrackFormatting/>\r\n  <w:PunctuationKerning/>\r\n  <w:ValidateAgainstSchemas/>\r\n  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>\r\n  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>\r\n  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>\r\n  <w:DoNotPromoteQF/>\r\n  <w:LidThemeOther>EN-US</w:LidThemeOther>\r\n  <w:LidThemeAsian>X-NONE</w:LidThemeAsian>\r\n  <w:LidThemeComplexScript>X-NONE</w:LidThemeComplexScript>\r\n  <w:Compatibility>\r\n   <w:BreakWrappedTables/>\r\n   <w:SnapToGridInCell/>\r\n   <w:WrapTextWithPunct/>\r\n   <w:UseAsianBreakRules/>\r\n   <w:DontGrowAutofit/>\r\n   <w:SplitPgBreakAndParaMark/>\r\n   <w:EnableOpenTypeKerning/>\r\n   <w:DontFlipMirrorIndents/>\r\n   <w:OverrideTableStyleHps/>\r\n  </w:Compatibility>\r\n  <m:mathPr>\r\n   <m:mathFont m:val="Cambria Math"/>\r\n   <m:brkBin m:val="before"/>\r\n   <m:brkBinSub m:val="&#45;-"/>\r\n   <m:smallFrac m:val="off"/>\r\n   <m:dispDef/>\r\n   <m:lMargin m:val="0"/>\r\n   <m:rMargin m:val="0"/>\r\n   <m:defJc m:val="centerGroup"/>\r\n   <m:wrapIndent m:val="1440"/>\r\n   <m:intLim m:val="subSup"/>\r\n   <m:naryLim m:val="undOvr"/>\r\n  </m:mathPr></w:WordDocument>\r\n</xml><![endif]--><!--[if gte mso 9]><xml>\r\n <w:LatentStyles DefLockedState="false" DefUnhideWhenUsed="false"\r\n  DefSemiHidden="false" DefQFormat="false" DefPriority="99"\r\n  LatentStyleCount="371">\r\n  <w:LsdException Locked="false" Priority="0" QFormat="true" Name="Normal"/>\r\n  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 1"/>\r\n  <w:LsdException Locked="false" Priority="9" SemiHidden="true"\r\n   UnhideWhenUsed="true" QFormat="true" Name="heading 2"/>\r\n  <w:LsdException Locked="false" Priority="9" SemiHidden="true"\r\n   UnhideWhenUsed="true" QFormat="true" Name="heading 3"/>\r\n  <w:LsdException Locked="false" Priority="9" SemiHidden="true"\r\n   UnhideWhenUsed="true" QFormat="true" Name="heading 4"/>\r\n  <w:LsdException Locked="false" Priority="9" SemiHidden="true"\r\n   UnhideWhenUsed="true" QFormat="true" Name="heading 5"/>\r\n  <w:LsdException Locked="false" Priority="9" SemiHidden="true"\r\n   UnhideWhenUsed="true" QFormat="true" Name="heading 6"/>\r\n  <w:LsdException Locked="false" Priority="9" SemiHidden="true"\r\n   UnhideWhenUsed="true" QFormat="true" Name="heading 7"/>\r\n  <w:LsdException Locked="false" Priority="9" SemiHidden="true"\r\n   UnhideWhenUsed="true" QFormat="true" Name="heading 8"/>\r\n  <w:LsdException Locked="false" Priority="9" SemiHidden="true"\r\n   UnhideWhenUsed="true" QFormat="true" Name="heading 9"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="index 1"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="index 2"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="index 3"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="index 4"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="index 5"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="index 6"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="index 7"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="index 8"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="index 9"/>\r\n  <w:LsdException Locked="false" Priority="39" SemiHidden="true"\r\n   UnhideWhenUsed="true" Name="toc 1"/>\r\n  <w:LsdException Locked="false" Priority="39" SemiHidden="true"\r\n   UnhideWhenUsed="true" Name="toc 2"/>\r\n  <w:LsdException Locked="false" Priority="39" SemiHidden="true"\r\n   UnhideWhenUsed="true" Name="toc 3"/>\r\n  <w:LsdException Locked="false" Priority="39" SemiHidden="true"\r\n   UnhideWhenUsed="true" Name="toc 4"/>\r\n  <w:LsdException Locked="false" Priority="39" SemiHidden="true"\r\n   UnhideWhenUsed="true" Name="toc 5"/>\r\n  <w:LsdException Locked="false" Priority="39" SemiHidden="true"\r\n   UnhideWhenUsed="true" Name="toc 6"/>\r\n  <w:LsdException Locked="false" Priority="39" SemiHidden="true"\r\n   UnhideWhenUsed="true" Name="toc 7"/>\r\n  <w:LsdException Locked="false" Priority="39" SemiHidden="true"\r\n   UnhideWhenUsed="true" Name="toc 8"/>\r\n  <w:LsdException Locked="false" Priority="39" SemiHidden="true"\r\n   UnhideWhenUsed="true" Name="toc 9"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Normal Indent"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="footnote text"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="annotation text"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="header"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="footer"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="index heading"/>\r\n  <w:LsdException Locked="false" Priority="35" SemiHidden="true"\r\n   UnhideWhenUsed="true" QFormat="true" Name="caption"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="table of figures"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="envelope address"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="envelope return"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="footnote reference"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="annotation reference"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="line number"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="page number"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="endnote reference"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="endnote text"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="table of authorities"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="macro"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="toa heading"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="List"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="List Bullet"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="List Number"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="List 2"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="List 3"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="List 4"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="List 5"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="List Bullet 2"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="List Bullet 3"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="List Bullet 4"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="List Bullet 5"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="List Number 2"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="List Number 3"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="List Number 4"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="List Number 5"/>\r\n  <w:LsdException Locked="false" Priority="10" QFormat="true" Name="Title"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Closing"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Signature"/>\r\n  <w:LsdException Locked="false" Priority="1" SemiHidden="true"\r\n   UnhideWhenUsed="true" Name="Default Paragraph Font"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Body Text"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Body Text Indent"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="List Continue"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="List Continue 2"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="List Continue 3"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="List Continue 4"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="List Continue 5"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Message Header"/>\r\n  <w:LsdException Locked="false" Priority="11" QFormat="true" Name="Subtitle"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Salutation"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Date"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Body Text First Indent"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Body Text First Indent 2"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Note Heading"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Body Text 2"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Body Text 3"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Body Text Indent 2"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Body Text Indent 3"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Block Text"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Hyperlink"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="FollowedHyperlink"/>\r\n  <w:LsdException Locked="false" Priority="22" QFormat="true" Name="Strong"/>\r\n  <w:LsdException Locked="false" Priority="20" QFormat="true" Name="Emphasis"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Document Map"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Plain Text"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="E-mail Signature"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="HTML Top of Form"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="HTML Bottom of Form"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Normal (Web)"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="HTML Acronym"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="HTML Address"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="HTML Cite"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="HTML Code"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="HTML Definition"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="HTML Keyboard"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="HTML Preformatted"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="HTML Sample"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="HTML Typewriter"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="HTML Variable"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Normal Table"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="annotation subject"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="No List"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Outline List 1"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Outline List 2"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Outline List 3"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Table Simple 1"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Table Simple 2"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Table Simple 3"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Table Classic 1"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Table Classic 2"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Table Classic 3"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Table Classic 4"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Table Colorful 1"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Table Colorful 2"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Table Colorful 3"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Table Columns 1"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Table Columns 2"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Table Columns 3"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Table Columns 4"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Table Columns 5"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Table Grid 1"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Table Grid 2"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Table Grid 3"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Table Grid 4"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Table Grid 5"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Table Grid 6"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Table Grid 7"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Table Grid 8"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Table List 1"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Table List 2"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Table List 3"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Table List 4"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Table List 5"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Table List 6"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Table List 7"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Table List 8"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Table 3D effects 1"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Table 3D effects 2"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Table 3D effects 3"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Table Contemporary"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Table Elegant"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Table Professional"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Table Subtle 1"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Table Subtle 2"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Table Web 1"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Table Web 2"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Table Web 3"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Balloon Text"/>\r\n  <w:LsdException Locked="false" Priority="39" Name="Table Grid"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"\r\n   Name="Table Theme"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" Name="Placeholder Text"/>\r\n  <w:LsdException Locked="false" Priority="1" QFormat="true" Name="No Spacing"/>\r\n  <w:LsdException Locked="false" Priority="60" Name="Light Shading"/>\r\n  <w:LsdException Locked="false" Priority="61" Name="Light List"/>\r\n  <w:LsdException Locked="false" Priority="62" Name="Light Grid"/>\r\n  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1"/>\r\n  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2"/>\r\n  <w:LsdException Locked="false" Priority="65" Name="Medium List 1"/>\r\n  <w:LsdException Locked="false" Priority="66" Name="Medium List 2"/>\r\n  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1"/>\r\n  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2"/>\r\n  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3"/>\r\n  <w:LsdException Locked="false" Priority="70" Name="Dark List"/>\r\n  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading"/>\r\n  <w:LsdException Locked="false" Priority="72" Name="Colorful List"/>\r\n  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid"/>\r\n  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 1"/>\r\n  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 1"/>\r\n  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 1"/>\r\n  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 1"/>\r\n  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 1"/>\r\n  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 1"/>\r\n  <w:LsdException Locked="false" SemiHidden="true" Name="Revision"/>\r\n  <w:LsdException Locked="false" Priority="34" QFormat="true"\r\n   Name="List Paragraph"/>\r\n  <w:LsdException Locked="false" Priority="29" QFormat="true" Name="Quote"/>\r\n  <w:LsdException Locked="false" Priority="30" QFormat="true"\r\n   Name="Intense Quote"/>\r\n  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 1"/>\r\n  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 1"/>\r\n  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 1"/>\r\n  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 1"/>\r\n  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 1"/>\r\n  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 1"/>\r\n  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 1"/>\r\n  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 1"/>\r\n  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 2"/>\r\n  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 2"/>\r\n  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 2"/>\r\n  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 2"/>\r\n  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 2"/>\r\n  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 2"/>\r\n  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 2"/>\r\n  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 2"/>\r\n  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 2"/>\r\n  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 2"/>\r\n  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 2"/>\r\n  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 2"/>\r\n  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 2"/>\r\n  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 2"/>\r\n  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 3"/>\r\n  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 3"/>\r\n  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 3"/>\r\n  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 3"/>\r\n  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 3"/>\r\n  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 3"/>\r\n  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 3"/>\r\n  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 3"/>\r\n  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 3"/>\r\n  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 3"/>\r\n  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 3"/>\r\n  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 3"/>\r\n  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 3"/>\r\n  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 3"/>\r\n  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 4"/>\r\n  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 4"/>\r\n  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 4"/>\r\n  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 4"/>\r\n  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 4"/>\r\n  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 4"/>\r\n  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 4"/>\r\n  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 4"/>\r\n  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 4"/>\r\n  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 4"/>\r\n  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 4"/>\r\n  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 4"/>\r\n  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 4"/>\r\n  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 4"/>\r\n  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 5"/>\r\n  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 5"/>\r\n  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 5"/>\r\n  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 5"/>\r\n  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 5"/>\r\n  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 5"/>\r\n  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 5"/>\r\n  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 5"/>\r\n  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 5"/>\r\n  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 5"/>\r\n  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 5"/>\r\n  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 5"/>\r\n  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 5"/>\r\n  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 5"/>\r\n  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 6"/>\r\n  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 6"/>\r\n  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 6"/>\r\n  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 6"/>\r\n  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 6"/>\r\n  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 6"/>\r\n  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 6"/>\r\n  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 6"/>\r\n  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 6"/>\r\n  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 6"/>\r\n  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 6"/>\r\n  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 6"/>\r\n  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 6"/>\r\n  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 6"/>\r\n  <w:LsdException Locked="false" Priority="19" QFormat="true"\r\n   Name="Subtle Emphasis"/>\r\n  <w:LsdException Locked="false" Priority="21" QFormat="true"\r\n   Name="Intense Emphasis"/>\r\n  <w:LsdException Locked="false" Priority="31" QFormat="true"\r\n   Name="Subtle Reference"/>\r\n  <w:LsdException Locked="false" Priority="32" QFormat="true"\r\n   Name="Intense Reference"/>\r\n  <w:LsdException Locked="false" Priority="33" QFormat="true" Name="Book Title"/>\r\n  <w:LsdException Locked="false" Priority="37" SemiHidden="true"\r\n   UnhideWhenUsed="true" Name="Bibliography"/>\r\n  <w:LsdException Locked="false" Priority="39" SemiHidden="true"\r\n   UnhideWhenUsed="true" QFormat="true" Name="TOC Heading"/>\r\n  <w:LsdException Locked="false" Priority="41" Name="Plain Table 1"/>\r\n  <w:LsdException Locked="false" Priority="42" Name="Plain Table 2"/>\r\n  <w:LsdException Locked="false" Priority="43" Name="Plain Table 3"/>\r\n  <w:LsdException Locked="false" Priority="44" Name="Plain Table 4"/>\r\n  <w:LsdException Locked="false" Priority="45" Name="Plain Table 5"/>\r\n  <w:LsdException Locked="false" Priority="40" Name="Grid Table Light"/>\r\n  <w:LsdException Locked="false" Priority="46" Name="Grid Table 1 Light"/>\r\n  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2"/>\r\n  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3"/>\r\n  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4"/>\r\n  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark"/>\r\n  <w:LsdException Locked="false" Priority="51" Name="Grid Table 6 Colorful"/>\r\n  <w:LsdException Locked="false" Priority="52" Name="Grid Table 7 Colorful"/>\r\n  <w:LsdException Locked="false" Priority="46"\r\n   Name="Grid Table 1 Light Accent 1"/>\r\n  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 1"/>\r\n  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 1"/>\r\n  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 1"/>\r\n  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 1"/>\r\n  <w:LsdException Locked="false" Priority="51"\r\n   Name="Grid Table 6 Colorful Accent 1"/>\r\n  <w:LsdException Locked="false" Priority="52"\r\n   Name="Grid Table 7 Colorful Accent 1"/>\r\n  <w:LsdException Locked="false" Priority="46"\r\n   Name="Grid Table 1 Light Accent 2"/>\r\n  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 2"/>\r\n  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 2"/>\r\n  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 2"/>\r\n  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 2"/>\r\n  <w:LsdException Locked="false" Priority="51"\r\n   Name="Grid Table 6 Colorful Accent 2"/>\r\n  <w:LsdException Locked="false" Priority="52"\r\n   Name="Grid Table 7 Colorful Accent 2"/>\r\n  <w:LsdException Locked="false" Priority="46"\r\n   Name="Grid Table 1 Light Accent 3"/>\r\n  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 3"/>\r\n  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 3"/>\r\n  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 3"/>\r\n  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 3"/>\r\n  <w:LsdException Locked="false" Priority="51"\r\n   Name="Grid Table 6 Colorful Accent 3"/>\r\n  <w:LsdException Locked="false" Priority="52"\r\n   Name="Grid Table 7 Colorful Accent 3"/>\r\n  <w:LsdException Locked="false" Priority="46"\r\n   Name="Grid Table 1 Light Accent 4"/>\r\n  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 4"/>\r\n  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 4"/>\r\n  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 4"/>\r\n  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 4"/>\r\n  <w:LsdException Locked="false" Priority="51"\r\n   Name="Grid Table 6 Colorful Accent 4"/>\r\n  <w:LsdException Locked="false" Priority="52"\r\n   Name="Grid Table 7 Colorful Accent 4"/>\r\n  <w:LsdException Locked="false" Priority="46"\r\n   Name="Grid Table 1 Light Accent 5"/>\r\n  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 5"/>\r\n  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 5"/>\r\n  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 5"/>\r\n  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 5"/>\r\n  <w:LsdException Locked="false" Priority="51"\r\n   Name="Grid Table 6 Colorful Accent 5"/>\r\n  <w:LsdException Locked="false" Priority="52"\r\n   Name="Grid Table 7 Colorful Accent 5"/>\r\n  <w:LsdException Locked="false" Priority="46"\r\n   Name="Grid Table 1 Light Accent 6"/>\r\n  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 6"/>\r\n  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 6"/>\r\n  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 6"/>\r\n  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 6"/>\r\n  <w:LsdException Locked="false" Priority="51"\r\n   Name="Grid Table 6 Colorful Accent 6"/>\r\n  <w:LsdException Locked="false" Priority="52"\r\n   Name="Grid Table 7 Colorful Accent 6"/>\r\n  <w:LsdException Locked="false" Priority="46" Name="List Table 1 Light"/>\r\n  <w:LsdException Locked="false" Priority="47" Name="List Table 2"/>\r\n  <w:LsdException Locked="false" Priority="48" Name="List Table 3"/>\r\n  <w:LsdException Locked="false" Priority="49" Name="List Table 4"/>\r\n  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark"/>\r\n  <w:LsdException Locked="false" Priority="51" Name="List Table 6 Colorful"/>\r\n  <w:LsdException Locked="false" Priority="52" Name="List Table 7 Colorful"/>\r\n  <w:LsdException Locked="false" Priority="46"\r\n   Name="List Table 1 Light Accent 1"/>\r\n  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 1"/>\r\n  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 1"/>\r\n  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 1"/>\r\n  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 1"/>\r\n  <w:LsdException Locked="false" Priority="51"\r\n   Name="List Table 6 Colorful Accent 1"/>\r\n  <w:LsdException Locked="false" Priority="52"\r\n   Name="List Table 7 Colorful Accent 1"/>\r\n  <w:LsdException Locked="false" Priority="46"\r\n   Name="List Table 1 Light Accent 2"/>\r\n  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 2"/>\r\n  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 2"/>\r\n  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 2"/>\r\n  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 2"/>\r\n  <w:LsdException Locked="false" Priority="51"\r\n   Name="List Table 6 Colorful Accent 2"/>\r\n  <w:LsdException Locked="false" Priority="52"\r\n   Name="List Table 7 Colorful Accent 2"/>\r\n  <w:LsdException Locked="false" Priority="46"\r\n   Name="List Table 1 Light Accent 3"/>\r\n  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 3"/>\r\n  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 3"/>\r\n  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 3"/>\r\n  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 3"/>\r\n  <w:LsdException Locked="false" Priority="51"\r\n   Name="List Table 6 Colorful Accent 3"/>\r\n  <w:LsdException Locked="false" Priority="52"\r\n   Name="List Table 7 Colorful Accent 3"/>\r\n  <w:LsdException Locked="false" Priority="46"\r\n   Name="List Table 1 Light Accent 4"/>\r\n  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 4"/>\r\n  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 4"/>\r\n  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 4"/>\r\n  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 4"/>\r\n  <w:LsdException Locked="false" Priority="51"\r\n   Name="List Table 6 Colorful Accent 4"/>\r\n  <w:LsdException Locked="false" Priority="52"\r\n   Name="List Table 7 Colorful Accent 4"/>\r\n  <w:LsdException Locked="false" Priority="46"\r\n   Name="List Table 1 Light Accent 5"/>\r\n  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 5"/>\r\n  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 5"/>\r\n  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 5"/>\r\n  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 5"/>\r\n  <w:LsdException Locked="false" Priority="51"\r\n   Name="List Table 6 Colorful Accent 5"/>\r\n  <w:LsdException Locked="false" Priority="52"\r\n   Name="List Table 7 Colorful Accent 5"/>\r\n  <w:LsdException Locked="false" Priority="46"\r\n   Name="List Table 1 Light Accent 6"/>\r\n  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 6"/>\r\n  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 6"/>\r\n  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 6"/>\r\n  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 6"/>\r\n  <w:LsdException Locked="false" Priority="51"\r\n   Name="List Table 6 Colorful Accent 6"/>\r\n  <w:LsdException Locked="false" Priority="52"\r\n   Name="List Table 7 Colorful Accent 6"/>\r\n </w:LatentStyles>\r\n</xml><![endif]--><!--[if gte mso 10]>\r\n<style>\r\n /* Style Definitions */\r\n table.MsoNormalTable\r\n	{mso-style-name:"Table Normal";\r\n	mso-tstyle-rowband-size:0;\r\n	mso-tstyle-colband-size:0;\r\n	mso-style-noshow:yes;\r\n	mso-style-priority:99;\r\n	mso-style-parent:"";\r\n	mso-padding-alt:0in 5.4pt 0in 5.4pt;\r\n	mso-para-margin-top:0in;\r\n	mso-para-margin-right:0in;\r\n	mso-para-margin-bottom:8.0pt;\r\n	mso-para-margin-left:0in;\r\n	line-height:107%;\r\n	mso-pagination:widow-orphan;\r\n	font-size:11.0pt;\r\n	font-family:"Calibri",sans-serif;\r\n	mso-ascii-font-family:Calibri;\r\n	mso-ascii-theme-font:minor-latin;\r\n	mso-hansi-font-family:Calibri;\r\n	mso-hansi-theme-font:minor-latin;\r\n	mso-bidi-font-family:"Times New Roman";\r\n	mso-bidi-theme-font:minor-bidi;}\r\n</style>\r\n<![endif]-->\r\n\r\n</p><p class="MsoNormal" style="text-align:justify">We offer full pack IT career services\r\nfor specific core areas such as IT Audit/Risk compliance, Cybersecurity,\r\nDigital BA, Agile scrum, General BA &amp; ERP BA.</p>', '/', 'Join Us', 1, '2019-10-10 10:18:33', '2019-10-11 05:16:41', NULL, 'small');
+/*!40000 ALTER TABLE `banners` ENABLE KEYS */;
+
+
+-- Dumping structure for table uotcareers_db.blocks
+CREATE TABLE IF NOT EXISTS `blocks` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `slug` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `content` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `link_label` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `link` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` tinyint(1) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Dumping data for table uotcareers_db.blocks: ~2 rows (approximately)
+/*!40000 ALTER TABLE `blocks` DISABLE KEYS */;
+INSERT INTO `blocks` (`id`, `slug`, `title`, `content`, `link_label`, `link`, `image`, `status`, `created_at`, `updated_at`) VALUES
+	(1, 'register', 'Don\'t Do it Hard..Do it Right', 'We offer full pack IT career services for specific core areas such as IT Audit/Risk compliance, Cybersecurity, Digital BA, Agile scrum, General BA & ERP BA...Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore cum. Coluta nobis est eligendi optio cumque nihil impedit quo minusd quod maxime placeat facere possimus, omnis voluptas assumenda est.', 'Register Now', '/register', 'enroll-bg_1.jpg', 1, '2019-10-11 08:54:09', '2019-10-11 08:54:09'),
+	(2, 'testimonials', 'Our Success Stories', 'Nulla cursus a metus vel placerat. Fusce malesuada volutpat pretium. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus velit libero, viverra quis euismod vel pellentesque at tortor. Donec', NULL, '/our-success-stories', NULL, 1, '2019-10-11 09:30:19', '2019-10-11 09:30:19');
+/*!40000 ALTER TABLE `blocks` ENABLE KEYS */;
+
+
+-- Dumping structure for table uotcareers_db.categories
+CREATE TABLE IF NOT EXISTS `categories` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `slug` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` tinyint(1) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Dumping data for table uotcareers_db.categories: ~0 rows (approximately)
+/*!40000 ALTER TABLE `categories` DISABLE KEYS */;
+/*!40000 ALTER TABLE `categories` ENABLE KEYS */;
+
+
+-- Dumping structure for table uotcareers_db.categorizables
+CREATE TABLE IF NOT EXISTS `categorizables` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `category_id` int(11) NOT NULL,
+  `categorizable_id` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `categorizable_type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Dumping data for table uotcareers_db.categorizables: ~0 rows (approximately)
+/*!40000 ALTER TABLE `categorizables` DISABLE KEYS */;
+/*!40000 ALTER TABLE `categorizables` ENABLE KEYS */;
+
+
+-- Dumping structure for table uotcareers_db.courses
+CREATE TABLE IF NOT EXISTS `courses` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `slug` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `body` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `duration` int(11) NOT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` tinyint(1) NOT NULL,
+  `price` double NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Dumping data for table uotcareers_db.courses: ~6 rows (approximately)
+/*!40000 ALTER TABLE `courses` DISABLE KEYS */;
+INSERT INTO `courses` (`id`, `title`, `slug`, `body`, `duration`, `image`, `status`, `price`, `created_at`, `updated_at`) VALUES
+	(1, 'IT Audit/Risk compliance', 'it-auditrisk-compliance', '<p>Technology auditing transforms the way people work, act, apply and manage their businesses. We are re-engineering and bringing more innovativeness to the IT Audit/Risk Compliance environment with mostly automated processes, hands on experience, organizational capability &amp; Risk based approach through real-time solutions, Customer focus efficiency and core service deliverables to various stakeholders. This course will deliver full pack knowledge of IT audit components. After completion, students will be able to assume audit roles such as ITGC, IT operational Risk, internal auditor, external auditor &amp; IT compliance.</p>', 100, 'service16.jpg', 1, 100, '2019-10-11 07:27:59', '2019-10-11 07:27:59'),
+	(2, 'Cyber Security', 'cyber-security', '<p>The state or process of detecting, protecting and recovering networks, systems and programs from any type of cyber-attack. The primary aim of security is the maintenance of a system that prevents attacks against the CIA triad, which are: Confidentiality, Integrity, and Availability. The only piece left is may be a brief description of what will be covered in the course and other things. <br></p>', 80, '1883790d-a6f2-4ea8-a48c-521737e4c96a.jpeg', 1, 100, '2019-10-11 07:30:08', '2019-10-11 07:30:08'),
+	(3, 'Digital BA', 'digital-ba', '<p>The way technology evolves increases the way businesses change and that increases the need for Digital business analysts to help gather /capture the change in requirements as they seek new ways of effectively reaching and serving the clients. It can be technology, Business change, marketing and product/services. This will cover E2E project lifecycle in capturing, translating and managing requirements to support business deliverables.<br></p>', 90, 'digital-marketing.jpg', 1, 96, '2019-10-11 07:31:12', '2019-10-11 07:31:12'),
+	(4, 'Agile Scrum', 'agile-scrum', '<p>Scrum is a lightweight agile project management framework mainly used for software development. It describes an iterative and incremental approach for project work. Scrum is used in developing complete software packages with a faster time to product release. The Agile Scrum training will equip delegates to:</p><ul><li> Understand the Scrum Framework</li><li>Understand the competencies and apply the Scrum framework</li><li>Understand how to deliver high value software with higher levels of agility using Scrum</li><li>Prepare for the Professional Scrum Master (PSM I) exam.</li></ul>', 25, 'agile-scrum-methodology-in-mobile-app-development.jpg', 1, 2000, '2019-10-11 08:17:59', '2019-10-11 08:17:59'),
+	(5, 'General BA: Fundamentals', 'general-ba-fundamentals', '<p>This course will offer a wide range of guidance on how to approach business analysis, using the key techniques, core concepts that will expose you to become a successful Business Analyst, an expert in multiple business domains and increase your ability to tackle complex projects, work with stakeholders to define and manage their business requirements, drive business processes, and identify opportunities to achieve better business requirement results. <br></p>', 60, 'digital-marketing_1.jpg', 1, 3500, '2019-10-11 08:19:56', '2019-10-11 08:19:56'),
+	(6, 'ERP BA', 'erp-ba', '<p>The ability to identify business needs and determine the best way in which to find and action solutions to problems is a discipline that all organizations ought to have a clear understanding and approach to. Its important cannot be underestimated, since it’s a key aspect to delivering value to corporate stakeholders. Allow strategy Execution to bring teams up to speed in this highly business relevant skill set with our ERP Business Analysis Courses based in the US and online.</p><p>The ERP Business Analysis training course will be delivered online structured in a 4-days module package but also includes some live simulated project work where you can get your hands dirty and learn this firsthand, same way as you would in your new or current role. Potential role titles to consider at the of this training can include; ERP Business Analyst, Business change Analyst, Dynamics 3650 BA, oracle Fusion BA etc.<br><br></p>', 20, 'image-asset.jpeg', 1, 2000, '2019-10-11 08:26:46', '2019-10-11 08:26:46');
+/*!40000 ALTER TABLE `courses` ENABLE KEYS */;
+
+
+-- Dumping structure for table uotcareers_db.faqs
+CREATE TABLE IF NOT EXISTS `faqs` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `question` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `answer` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` tinyint(1) NOT NULL DEFAULT 1,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Dumping data for table uotcareers_db.faqs: ~2 rows (approximately)
+/*!40000 ALTER TABLE `faqs` DISABLE KEYS */;
+INSERT INTO `faqs` (`id`, `question`, `answer`, `status`, `created_at`, `updated_at`) VALUES
+	(1, 'Can i pay for the course online ?', '<p>Mauris at varius orci. Vestibulum interdum felis eu nisl pulvinar, quis ultricies nibh. Sed ultricies ante vitae laoreet sagittis. In pellentesque viverra purus. Sed risus est, molestie nec hendrerit hendrerit, sollicitudin nec ante.<br></p>', 1, '2019-10-11 21:01:14', '2019-10-11 21:01:14'),
+	(2, 'How many course do you offer?', '<p>Mauris at varius orci. Vestibulum interdum felis eu nisl pulvinar, quis ultricies nibh. Sed ultricies ante vitae laoreet sagittis. In pellentesque viverra purus. Sed risus est, molestie nec hendrerit hendrerit, sollicitudin nec ante.<br></p>', 1, '2019-10-11 21:01:47', '2019-10-11 21:01:47');
+/*!40000 ALTER TABLE `faqs` ENABLE KEYS */;
+
+
+-- Dumping structure for table uotcareers_db.history
+CREATE TABLE IF NOT EXISTS `history` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `historable_id` int(10) unsigned NOT NULL,
+  `historable_type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `user_id` int(10) unsigned DEFAULT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `icon_class` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `historable_table` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `action` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=66 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Dumping data for table uotcareers_db.history: ~62 rows (approximately)
+/*!40000 ALTER TABLE `history` DISABLE KEYS */;
+INSERT INTO `history` (`id`, `historable_id`, `historable_type`, `user_id`, `title`, `icon_class`, `historable_table`, `action`, `created_at`, `updated_at`) VALUES
+	(1, 17, 'Modules\\Pages\\Entities\\Page', 1, 'Dental Solutions', 'fa-plus-circle', 'pages', 'created', '2019-10-07 11:18:14', '2019-10-07 11:18:14'),
+	(2, 18, 'Modules\\Pages\\Entities\\Page', 1, 'Dental Solutions', 'fa-plus-circle', 'pages', 'created', '2019-10-07 11:18:14', '2019-10-07 11:18:14'),
+	(3, 17, 'Modules\\Pages\\Entities\\Page', 1, 'Dental Solutions', 'fa-edit', 'pages', 'updated', '2019-10-07 11:20:37', '2019-10-07 11:20:37'),
+	(4, 1, 'Modules\\Pages\\Entities\\Page', 1, 'Home', 'fa-edit', 'pages', 'updated', '2019-10-07 19:40:58', '2019-10-07 19:40:58'),
+	(5, 2, 'Modules\\Pages\\Entities\\Page', 1, 'About Us', 'fa-edit', 'pages', 'updated', '2019-10-07 19:58:20', '2019-10-07 19:58:20'),
+	(6, 3, 'Modules\\Pages\\Entities\\Page', 1, 'Who We Are', 'fa-edit', 'pages', 'updated', '2019-10-07 19:58:21', '2019-10-07 19:58:21'),
+	(7, 4, 'Modules\\Pages\\Entities\\Page', 1, 'Our Leadership', 'fa-edit', 'pages', 'updated', '2019-10-07 19:58:21', '2019-10-07 19:58:21'),
+	(8, 5, 'Modules\\Pages\\Entities\\Page', 1, 'Our Gold Partners', 'fa-edit', 'pages', 'updated', '2019-10-07 19:58:21', '2019-10-07 19:58:21'),
+	(9, 3, 'Modules\\Pages\\Entities\\Page', 1, 'Who We Are', 'fa-edit', 'pages', 'updated', '2019-10-07 20:00:42', '2019-10-07 20:00:42'),
+	(10, 4, 'Modules\\Pages\\Entities\\Page', 1, 'Our Leadership', 'fa-edit', 'pages', 'updated', '2019-10-07 20:00:42', '2019-10-07 20:00:42'),
+	(11, 5, 'Modules\\Pages\\Entities\\Page', 1, 'Our Gold Partners', 'fa-edit', 'pages', 'updated', '2019-10-07 20:00:43', '2019-10-07 20:00:43'),
+	(12, 3, 'Modules\\Pages\\Entities\\Page', 1, 'Who We Are', 'fa-edit', 'pages', 'updated', '2019-10-07 20:01:23', '2019-10-07 20:01:23'),
+	(13, 4, 'Modules\\Pages\\Entities\\Page', 1, 'Our Leadership', 'fa-edit', 'pages', 'updated', '2019-10-07 20:01:23', '2019-10-07 20:01:23'),
+	(14, 5, 'Modules\\Pages\\Entities\\Page', 1, 'Our Gold Partners', 'fa-edit', 'pages', 'updated', '2019-10-07 20:01:24', '2019-10-07 20:01:24'),
+	(15, 3, 'Modules\\Pages\\Entities\\Page', 1, 'Who We Are', 'fa-edit', 'pages', 'updated', '2019-10-07 20:08:48', '2019-10-07 20:08:48'),
+	(16, 4, 'Modules\\Pages\\Entities\\Page', 1, 'Our Leadership', 'fa-edit', 'pages', 'updated', '2019-10-07 20:08:48', '2019-10-07 20:08:48'),
+	(17, 5, 'Modules\\Pages\\Entities\\Page', 1, 'Our Gold Partners', 'fa-edit', 'pages', 'updated', '2019-10-07 20:08:48', '2019-10-07 20:08:48'),
+	(18, 3, 'Modules\\Pages\\Entities\\Page', 1, 'Who We Are', 'fa-edit', 'pages', 'updated', '2019-10-07 20:09:01', '2019-10-07 20:09:01'),
+	(19, 4, 'Modules\\Pages\\Entities\\Page', 1, 'Our Leadership', 'fa-edit', 'pages', 'updated', '2019-10-07 20:09:02', '2019-10-07 20:09:02'),
+	(20, 5, 'Modules\\Pages\\Entities\\Page', 1, 'Our Gold Partners', 'fa-edit', 'pages', 'updated', '2019-10-07 20:09:02', '2019-10-07 20:09:02'),
+	(21, 2, 'Modules\\Pages\\Entities\\Page', 1, 'About Us', 'fa-edit', 'pages', 'updated', '2019-10-08 09:05:26', '2019-10-08 09:05:26'),
+	(22, 3, 'Modules\\Pages\\Entities\\Page', 1, 'Who We Are', 'fa-edit', 'pages', 'updated', '2019-10-08 09:05:27', '2019-10-08 09:05:27'),
+	(23, 4, 'Modules\\Pages\\Entities\\Page', 1, 'Our Leadership', 'fa-edit', 'pages', 'updated', '2019-10-08 09:05:27', '2019-10-08 09:05:27'),
+	(24, 5, 'Modules\\Pages\\Entities\\Page', 1, 'Our Gold Partners', 'fa-edit', 'pages', 'updated', '2019-10-08 09:05:27', '2019-10-08 09:05:27'),
+	(25, 2, 'Modules\\Pages\\Entities\\Page', 1, 'About Us', 'fa-edit', 'pages', 'updated', '2019-10-08 12:20:43', '2019-10-08 12:20:43'),
+	(26, 3, 'Modules\\Pages\\Entities\\Page', 1, 'Our Vision', 'fa-edit', 'pages', 'updated', '2019-10-08 12:20:43', '2019-10-08 12:20:43'),
+	(27, 4, 'Modules\\Pages\\Entities\\Page', 1, 'Our Mission', 'fa-edit', 'pages', 'updated', '2019-10-08 12:20:43', '2019-10-08 12:20:43'),
+	(28, 3, 'Modules\\Pages\\Entities\\Page', 1, 'Our Vision', 'fa-edit', 'pages', 'updated', '2019-10-08 12:21:31', '2019-10-08 12:21:31'),
+	(29, 4, 'Modules\\Pages\\Entities\\Page', 1, 'Our Mission', 'fa-edit', 'pages', 'updated', '2019-10-08 12:22:09', '2019-10-08 12:22:09'),
+	(30, 4, 'Modules\\Pages\\Entities\\Page', 1, 'Our Mission', 'fa-edit', 'pages', 'updated', '2019-10-08 12:23:15', '2019-10-08 12:23:15'),
+	(31, 14, 'Modules\\Pages\\Entities\\Page', 1, 'Pastor Bola', 'fa-plus-circle', 'pages', 'created', '2019-10-08 12:35:27', '2019-10-08 12:35:27'),
+	(32, 14, 'Modules\\Pages\\Entities\\Page', 1, 'Our Leadership', 'fa-edit', 'pages', 'updated', '2019-10-08 12:37:07', '2019-10-08 12:37:07'),
+	(33, 14, 'Modules\\Pages\\Entities\\Page', 1, 'Our Leadership', 'fa-edit', 'pages', 'updated', '2019-10-08 12:40:30', '2019-10-08 12:40:30'),
+	(34, 13, 'Modules\\Menus\\Entities\\MenuLink', 1, 'Contact Us', 'fa-edit', 'menu_links', 'updated', '2019-10-08 19:12:20', '2019-10-08 19:12:20'),
+	(35, 13, 'Modules\\Pages\\Entities\\Page', 1, 'Contact Us', 'fa-edit', 'pages', 'updated', '2019-10-08 19:18:03', '2019-10-08 19:18:03'),
+	(36, 15, 'Modules\\Pages\\Entities\\Page', 1, 'Donates', 'fa-plus-circle', 'pages', 'created', '2019-10-08 19:48:02', '2019-10-08 19:48:02'),
+	(37, 15, 'Modules\\Pages\\Entities\\Page', 1, 'Donate', 'fa-edit', 'pages', 'updated', '2019-10-08 19:48:51', '2019-10-08 19:48:51'),
+	(38, 9, 'Modules\\Pages\\Entities\\Page', 1, 'Messages', 'fa-edit', 'pages', 'updated', '2019-10-08 20:29:18', '2019-10-08 20:29:18'),
+	(39, 10, 'Modules\\Pages\\Entities\\Page', 1, 'Testimonials', 'fa-edit', 'pages', 'updated', '2019-10-08 20:48:11', '2019-10-08 20:48:11'),
+	(40, 1, 'Modules\\Pages\\Entities\\Page', 1, 'Home', 'fa-edit', 'pages', 'updated', '2019-10-10 07:37:15', '2019-10-10 07:37:15'),
+	(41, 16, 'Modules\\Pages\\Entities\\Page', 1, 'Our Story', 'fa-plus-circle', 'pages', 'created', '2019-10-11 05:30:04', '2019-10-11 05:30:04'),
+	(42, 16, 'Modules\\Pages\\Entities\\Page', 1, 'Our Story', 'fa-trash', 'pages', 'deleted', '2019-10-11 05:31:00', '2019-10-11 05:31:00'),
+	(43, 17, 'Modules\\Pages\\Entities\\Page', 1, 'Our Story', 'fa-plus-circle', 'pages', 'created', '2019-10-11 05:31:31', '2019-10-11 05:31:31'),
+	(44, 23, 'Modules\\Menus\\Entities\\MenuLink', 1, 'Our Story', 'fa-plus-circle', 'menu_links', 'created', '2019-10-11 05:31:32', '2019-10-11 05:31:32'),
+	(45, 17, 'Modules\\Pages\\Entities\\Page', 1, 'Our Story', 'fa-edit', 'pages', 'updated', '2019-10-11 05:31:32', '2019-10-11 05:31:32'),
+	(46, 18, 'Modules\\Pages\\Entities\\Page', 1, 'Our Clients', 'fa-plus-circle', 'pages', 'created', '2019-10-11 05:32:14', '2019-10-11 05:32:14'),
+	(47, 24, 'Modules\\Menus\\Entities\\MenuLink', 1, 'Our Clients', 'fa-plus-circle', 'menu_links', 'created', '2019-10-11 05:32:14', '2019-10-11 05:32:14'),
+	(48, 18, 'Modules\\Pages\\Entities\\Page', 1, 'Our Clients', 'fa-edit', 'pages', 'updated', '2019-10-11 05:32:14', '2019-10-11 05:32:14'),
+	(49, 19, 'Modules\\Pages\\Entities\\Page', 1, 'Why Us', 'fa-plus-circle', 'pages', 'created', '2019-10-11 05:32:35', '2019-10-11 05:32:35'),
+	(50, 25, 'Modules\\Menus\\Entities\\MenuLink', 1, 'Why Us', 'fa-plus-circle', 'menu_links', 'created', '2019-10-11 05:32:36', '2019-10-11 05:32:36'),
+	(51, 19, 'Modules\\Pages\\Entities\\Page', 1, 'Why Us', 'fa-edit', 'pages', 'updated', '2019-10-11 05:32:36', '2019-10-11 05:32:36'),
+	(52, 20, 'Modules\\Pages\\Entities\\Page', 1, 'Courses', 'fa-plus-circle', 'pages', 'created', '2019-10-11 05:34:59', '2019-10-11 05:34:59'),
+	(53, 26, 'Modules\\Menus\\Entities\\MenuLink', 1, 'Courses', 'fa-plus-circle', 'menu_links', 'created', '2019-10-11 05:34:59', '2019-10-11 05:34:59'),
+	(54, 27, 'Modules\\Menus\\Entities\\MenuLink', 1, 'Courses', 'fa-plus-circle', 'menu_links', 'created', '2019-10-11 05:34:59', '2019-10-11 05:34:59'),
+	(55, 21, 'Modules\\Pages\\Entities\\Page', 1, 'Success Stories', 'fa-plus-circle', 'pages', 'created', '2019-10-11 05:39:51', '2019-10-11 05:39:51'),
+	(56, 28, 'Modules\\Menus\\Entities\\MenuLink', 1, 'Success Stories', 'fa-plus-circle', 'menu_links', 'created', '2019-10-11 05:39:52', '2019-10-11 05:39:52'),
+	(57, 29, 'Modules\\Menus\\Entities\\MenuLink', 1, 'Success Stories', 'fa-plus-circle', 'menu_links', 'created', '2019-10-11 05:39:52', '2019-10-11 05:39:52'),
+	(58, 22, 'Modules\\Pages\\Entities\\Page', 1, 'Faqs', 'fa-plus-circle', 'pages', 'created', '2019-10-11 05:41:57', '2019-10-11 05:41:57'),
+	(59, 30, 'Modules\\Menus\\Entities\\MenuLink', 1, 'Faqs', 'fa-plus-circle', 'menu_links', 'created', '2019-10-11 05:41:57', '2019-10-11 05:41:57'),
+	(60, 31, 'Modules\\Menus\\Entities\\MenuLink', 1, 'Faqs', 'fa-plus-circle', 'menu_links', 'created', '2019-10-11 05:41:57', '2019-10-11 05:41:57'),
+	(61, 19, 'Modules\\Menus\\Entities\\MenuLink', 1, 'Contact Us', 'fa-edit', 'menu_links', 'updated', '2019-10-11 05:48:54', '2019-10-11 05:48:54'),
+	(62, 32, 'Modules\\Menus\\Entities\\MenuLink', 1, 'Contact Us', 'fa-edit', 'menu_links', 'updated', '2019-10-11 05:50:06', '2019-10-11 05:50:06'),
+	(63, 1, 'Modules\\Pages\\Entities\\Page', 1, 'Home', 'fa-edit', 'pages', 'updated', '2019-10-11 06:21:04', '2019-10-11 06:21:04'),
+	(64, 1, 'Modules\\Pages\\Entities\\Page', 1, 'Home', 'fa-edit', 'pages', 'updated', '2019-10-11 06:30:09', '2019-10-11 06:30:09'),
+	(65, 23, 'Modules\\Pages\\Entities\\Page', 1, 'Our Success Stories', 'fa-plus-circle', 'pages', 'created', '2019-10-11 09:27:30', '2019-10-11 09:27:30');
+/*!40000 ALTER TABLE `history` ENABLE KEYS */;
+
+
+-- Dumping structure for table uotcareers_db.menus
+CREATE TABLE IF NOT EXISTS `menus` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `slug` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` tinyint(1) NOT NULL DEFAULT 0,
+  `class` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Dumping data for table uotcareers_db.menus: ~3 rows (approximately)
+/*!40000 ALTER TABLE `menus` DISABLE KEYS */;
+INSERT INTO `menus` (`id`, `name`, `slug`, `status`, `class`, `created_at`, `updated_at`) VALUES
+	(1, 'Main', 'main', 1, NULL, NULL, NULL),
+	(2, 'Footer', 'footer', 1, NULL, NULL, NULL),
+	(3, 'Top', 'top', 1, NULL, NULL, NULL);
+/*!40000 ALTER TABLE `menus` ENABLE KEYS */;
+
+
+-- Dumping structure for table uotcareers_db.menu_links
+CREATE TABLE IF NOT EXISTS `menu_links` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `slug` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `tagline` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `parent_id` int(10) unsigned DEFAULT NULL,
+  `link_type` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `page_id` int(10) unsigned DEFAULT NULL,
+  `category_id` int(11) DEFAULT NULL,
+  `active` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `category_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `url` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `uri` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `menu_id` int(10) unsigned NOT NULL,
+  `position` int(10) unsigned DEFAULT NULL,
+  `target` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `restricted_to` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `class` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` tinyint(1) NOT NULL DEFAULT 1,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Dumping data for table uotcareers_db.menu_links: ~15 rows (approximately)
+/*!40000 ALTER TABLE `menu_links` DISABLE KEYS */;
+INSERT INTO `menu_links` (`id`, `title`, `slug`, `tagline`, `parent_id`, `link_type`, `page_id`, `category_id`, `active`, `category_name`, `url`, `uri`, `menu_id`, `position`, `target`, `restricted_to`, `class`, `status`, `created_at`, `updated_at`) VALUES
+	(1, 'Home', '/', NULL, 0, NULL, 1, NULL, NULL, NULL, '', '', 1, 1, NULL, NULL, NULL, 1, '2015-06-25 21:57:44', '2015-06-25 20:26:35'),
+	(2, 'About Us', '/', NULL, 0, NULL, 2, NULL, NULL, NULL, '', '', 1, 2, NULL, NULL, NULL, 1, '2015-06-25 21:57:44', '2015-06-25 20:26:35'),
+	(14, 'Home', '/', NULL, 0, NULL, 1, NULL, NULL, NULL, '', '', 2, 1, NULL, NULL, NULL, 1, '2015-06-25 21:57:44', '2015-06-25 20:26:35'),
+	(15, 'About Us', '/', NULL, 0, NULL, 2, NULL, NULL, NULL, '', '', 2, 2, NULL, NULL, NULL, 1, '2015-06-25 21:57:44', '2015-06-25 20:26:35'),
+	(19, 'Contact Us', '/', NULL, NULL, NULL, 13, NULL, NULL, NULL, NULL, '/', 1, 9, NULL, NULL, NULL, 1, '2015-06-25 21:57:44', '2019-10-11 05:48:54'),
+	(23, 'Our Story', NULL, NULL, 2, NULL, 17, NULL, NULL, NULL, NULL, NULL, 1, 3, NULL, NULL, NULL, 1, '2019-10-11 05:31:32', '2019-10-11 05:31:32'),
+	(24, 'Our Clients', NULL, NULL, 2, NULL, 18, NULL, NULL, NULL, NULL, NULL, 1, 4, NULL, NULL, NULL, 1, '2019-10-11 05:32:14', '2019-10-11 05:32:14'),
+	(25, 'Why Us', NULL, NULL, 2, NULL, 19, NULL, NULL, NULL, NULL, NULL, 1, 5, NULL, NULL, NULL, 1, '2019-10-11 05:32:36', '2019-10-11 05:32:36'),
+	(26, 'Courses', NULL, NULL, NULL, NULL, 20, NULL, NULL, NULL, NULL, NULL, 1, 6, NULL, NULL, NULL, 1, '2019-10-11 05:34:59', '2019-10-11 05:34:59'),
+	(27, 'Courses', NULL, NULL, NULL, NULL, 20, NULL, NULL, NULL, NULL, NULL, 2, 4, NULL, NULL, NULL, 1, '2019-10-11 05:34:59', '2019-10-11 05:34:59'),
+	(28, 'Success Stories', NULL, NULL, NULL, NULL, 21, NULL, NULL, NULL, NULL, NULL, 1, 7, NULL, NULL, NULL, 1, '2019-10-11 05:39:52', '2019-10-11 05:39:52'),
+	(29, 'Success Stories', NULL, NULL, NULL, NULL, 21, NULL, NULL, NULL, NULL, NULL, 2, 5, NULL, NULL, NULL, 1, '2019-10-11 05:39:52', '2019-10-11 05:39:52'),
+	(30, 'FAQs', NULL, NULL, NULL, NULL, 22, NULL, NULL, NULL, NULL, NULL, 1, 8, NULL, NULL, NULL, 1, '2019-10-11 05:41:57', '2019-10-11 05:41:57'),
+	(31, 'FAQs', NULL, NULL, NULL, NULL, 22, NULL, NULL, NULL, NULL, NULL, 2, 6, NULL, NULL, NULL, 1, '2019-10-11 05:41:57', '2019-10-11 05:41:57'),
+	(32, 'Contact Us', '/', NULL, NULL, NULL, 13, NULL, NULL, NULL, NULL, '/', 2, 3, NULL, NULL, NULL, 1, '2015-06-25 21:57:44', '2019-10-11 05:50:06');
+/*!40000 ALTER TABLE `menu_links` ENABLE KEYS */;
+
+
+-- Dumping structure for table uotcareers_db.migrations
+CREATE TABLE IF NOT EXISTS `migrations` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `batch` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Dumping data for table uotcareers_db.migrations: ~26 rows (approximately)
+/*!40000 ALTER TABLE `migrations` DISABLE KEYS */;
+INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
+	(1, '2014_07_02_230147_migration_cartalyst_sentinel', 1),
+	(2, '2016_03_02_084255_create_banners_table', 1),
+	(3, '2016_03_07_120917_add_positon_to_banners_table', 1),
+	(4, '2016_08_16_134331_create_events_table', 1),
+	(5, '2018_12_03_002750_create_tenants_table', 1),
+	(6, '2016_03_13_135042_create_history_table', 2),
+	(7, '2016_03_05_110859_create_menus_table', 3),
+	(8, '2016_03_05_113829_create_menu_links_table', 3),
+	(9, '2016_03_13_015928_create_settings_table', 4),
+	(10, '2016_02_04_141945_add_is_first_login_to_users_table', 5),
+	(11, '2016_08_07_184117_add_fields_to_users_table', 5),
+	(12, '2015_06_28_163955_create_pages_table', 6),
+	(13, '2019_01_23_112728_add_icon_to_pages_table', 7),
+	(17, '2016_03_07_035038_create_teams_table', 9),
+	(21, '2019_01_23_124704_create_publications_table', 10),
+	(25, '2019_10_08_135314_create_sermons_table', 11),
+	(27, '2016_10_27_181348_create_albums_table', 12),
+	(30, '2019_10_09_091653_create_photos_table', 13),
+	(31, '2019_10_09_092220_create_photoables_table', 13),
+	(32, '2019_04_18_044640_create_categories_table', 14),
+	(33, '2019_04_18_052028_create_categoriables_table', 14),
+	(34, '2019_10_09_170727_create_testimonials_table', 15),
+	(35, '2019_10_09_192519_create_products_table', 16),
+	(36, '2019_10_09_202929_create_blocks_table', 17),
+	(37, '2019_10_09_184416_create_partners_table', 18),
+	(38, '2019_10_10_104901_add_body_font_size_to_banners_table', 19),
+	(40, '2019_10_11_063409_create_courses_table', 20),
+	(41, '2019_10_11_205704_create_faqs_table', 21);
+/*!40000 ALTER TABLE `migrations` ENABLE KEYS */;
+
+
+-- Dumping structure for table uotcareers_db.pages
+CREATE TABLE IF NOT EXISTS `pages` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `meta_robots_no_index` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `meta_robots_no_follow` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `position` int(10) unsigned NOT NULL DEFAULT 0,
+  `parent_id` int(10) unsigned DEFAULT NULL,
+  `is_home` tinyint(1) NOT NULL DEFAULT 0,
+  `redirect` tinyint(1) NOT NULL DEFAULT 0,
+  `css` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `js` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `module` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `template` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `slug` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `uri` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `body` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `tagline` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` tinyint(1) NOT NULL DEFAULT 1,
+  `meta_title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `meta_keywords` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `meta_description` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `icon` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Dumping data for table uotcareers_db.pages: ~10 rows (approximately)
+/*!40000 ALTER TABLE `pages` DISABLE KEYS */;
+INSERT INTO `pages` (`id`, `meta_robots_no_index`, `meta_robots_no_follow`, `image`, `position`, `parent_id`, `is_home`, `redirect`, `css`, `js`, `module`, `template`, `slug`, `uri`, `title`, `body`, `tagline`, `status`, `meta_title`, `meta_keywords`, `meta_description`, `created_at`, `updated_at`, `icon`) VALUES
+	(1, '0', '0', NULL, 0, NULL, 1, 0, NULL, NULL, NULL, 'home', '/', '/', 'Home', '<p>We offer full pack IT career services\r\nfor specific core areas such as IT Audit/Risk compliance, Cybersecurity,\r\nDigital BA, Agile scrum, General BA &amp; ERP BA. Explore courses and available classes below<br></p>', NULL, 1, NULL, NULL, NULL, '2015-06-25 21:57:44', '2019-10-11 06:30:09', NULL),
+	(2, '0', '0', NULL, 0, NULL, 0, 0, NULL, NULL, NULL, 'default', 'about-us', 'about-us', 'About Us', '<p>As marketing professionals in the experiential world, we have become accusto to the idea of an ever evolving industry. Brands today are moving away from purely face to face physical experiences, and bringing their essence to life, not only through digital immersion creativity but through new technology as well including Virtual Reality.</p>\r\n<p>face physical experiences, and bringing their essence to life, not only through digital immersion creativity but through new technology as well including Virtual Reality As marketing professionals in the experiential world, we have become accusto to the idea of an ever evolving industry. Brands today are moving away from purely face to face physical experiences,</p>', NULL, 1, NULL, NULL, NULL, '2015-06-25 21:57:44', '2019-10-08 12:20:43', NULL),
+	(13, '0', '0', NULL, 0, NULL, 0, 0, NULL, NULL, NULL, 'contact', 'contact-us', 'contact-us', 'Contact Us', 'Mauris at varius orci. Vestibulum interdum felis eu nisl pulvinar, quis ultricies nibh. Sed ultricies ante vitae laoreet sagittis. In pellentesque viverra purus. Sed risus est, molestie nec hendrerit hendrerit, sollicitudin nec ante.', 'We\'d Love To Hear From You!', 1, NULL, NULL, NULL, '2015-06-25 21:57:44', '2019-10-08 19:18:03', NULL),
+	(17, '0', '0', NULL, 0, 2, 0, 0, NULL, NULL, NULL, 'default', 'our-story', 'about-us/our-story', 'Our Story', '<p>As marketing professionals in the experiential world, we have become accusto to the idea of an ever evolving industry. Brands today are moving away from purely face to face physical experiences, and bringing their essence to life, not only through digital immersion creativity but through new technology as well including Virtual Reality.</p>\r\n<p>face physical experiences, and bringing their essence to life, not only through digital immersion creativity but through new technology as well including Virtual Reality As marketing professionals in the experiential world, we have become accusto to the idea of an ever evolving industry. Brands today are moving away from purely face to face physical experiences,</p>', NULL, 1, NULL, NULL, NULL, '2019-10-11 05:31:31', '2019-10-11 05:31:32', NULL),
+	(18, '0', '0', NULL, 0, 2, 0, 0, NULL, NULL, NULL, 'default', 'our-clients', 'about-us/our-clients', 'Our Clients', NULL, NULL, 1, NULL, NULL, NULL, '2019-10-11 05:32:13', '2019-10-11 05:32:14', NULL),
+	(19, '0', '0', NULL, 0, 2, 0, 0, NULL, NULL, NULL, 'default', 'why-us', 'about-us/why-us', 'Why Us', '<p>As marketing professionals in the experiential world, we have become accusto to the idea of an ever evolving industry. Brands today are moving away from purely face to face physical experiences, and bringing their essence to life, not only through digital immersion creativity but through new technology as well including Virtual Reality.</p>\r\n<p>face physical experiences, and bringing their essence to life, not only through digital immersion creativity but through new technology as well including Virtual Reality As marketing professionals in the experiential world, we have become accusto to the idea of an ever evolving industry. Brands today are moving away from purely face to face physical experiences,</p>', NULL, 1, NULL, NULL, NULL, '2019-10-11 05:32:35', '2019-10-11 05:32:36', NULL),
+	(20, '0', '0', NULL, 0, NULL, 0, 0, NULL, NULL, 'courses', 'default', 'courses', 'courses', 'Courses', NULL, NULL, 1, NULL, NULL, NULL, '2019-10-11 05:34:59', '2019-10-11 05:34:59', NULL),
+	(21, '0', '0', NULL, 0, NULL, 0, 0, NULL, NULL, 'testimonials', 'default', 'success-stories', 'success-stories', 'Success Stories', NULL, NULL, 1, NULL, NULL, NULL, '2019-10-11 05:39:51', '2019-10-11 05:39:51', NULL),
+	(22, '0', '0', NULL, 0, NULL, 0, 0, NULL, NULL, 'faqs', 'default', 'faqs', 'faqs', 'FAQs', 'Mauris at varius orci. Vestibulum interdum felis eu nisl pulvinar, quis ultricies nibh. Sed ultricies ante vitae laoreet sagittis. In pellentesque viverra purus. Sed risus est, molestie nec hendrerit hendrerit, sollicitudin nec ante.', NULL, 1, NULL, NULL, NULL, '2019-10-11 05:41:56', '2019-10-11 05:41:56', NULL),
+	(23, '0', '0', NULL, 0, NULL, 0, 0, NULL, NULL, 'testimonials', 'default', 'our-success-stories', 'our-success-stories', 'Our Success Stories', '<p>Nulla cursus a metus vel placerat. Fusce malesuada volutpat pretium. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus velit libero, viverra quis euismod vel pellentesque at tortor. Donec<br></p>', NULL, 1, NULL, NULL, NULL, '2019-10-11 09:27:30', '2019-10-11 09:27:30', NULL);
+/*!40000 ALTER TABLE `pages` ENABLE KEYS */;
+
+
+-- Dumping structure for table uotcareers_db.partners
+CREATE TABLE IF NOT EXISTS `partners` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `slug` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `company` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `address` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `tag` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `website` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `phone` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `body` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` tinyint(1) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Dumping data for table uotcareers_db.partners: ~0 rows (approximately)
+/*!40000 ALTER TABLE `partners` DISABLE KEYS */;
+/*!40000 ALTER TABLE `partners` ENABLE KEYS */;
+
+
+-- Dumping structure for table uotcareers_db.persistences
+CREATE TABLE IF NOT EXISTS `persistences` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `user_id` int(10) unsigned NOT NULL,
+  `code` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=56 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Dumping data for table uotcareers_db.persistences: ~51 rows (approximately)
+/*!40000 ALTER TABLE `persistences` DISABLE KEYS */;
+INSERT INTO `persistences` (`id`, `user_id`, `code`, `created_at`, `updated_at`) VALUES
+	(1, 1, 'XkfNdc08cBuQ56HYlLBZBEC4riSatOOj', '2019-01-20 19:09:33', '2019-01-20 19:09:33'),
+	(2, 1, 'ysJHDfhZ9iL2axHiObuvczd3Hb3XzFxW', '2019-01-23 08:34:49', '2019-01-23 08:34:49'),
+	(3, 1, 'ZJlvSJofd62XCq7KVoiGsboE2hwU5Rbi', '2019-01-31 06:20:18', '2019-01-31 06:20:18'),
+	(4, 1, 'wBVf3wrRXDNSmxzTMoHUIAnEw2dhpeXK', '2019-02-01 04:49:20', '2019-02-01 04:49:20'),
+	(5, 1, 'wuqPvfLmlGmDDQZVbutU42ZYdeydk0F8', '2019-02-01 11:30:07', '2019-02-01 11:30:07'),
+	(6, 1, '6lTzQdPy1MbUcazCQSeBeVEAL7BfxRWS', '2019-02-01 15:45:49', '2019-02-01 15:45:49'),
+	(7, 1, 'A91VLGrjr0ysrh5saTN0U2QVZ8dFHpLW', '2019-02-04 06:18:17', '2019-02-04 06:18:17'),
+	(8, 1, 'C6Gjhxw8EpHk4aA7fwQEZnw8pRKEFukR', '2019-02-04 11:37:24', '2019-02-04 11:37:24'),
+	(9, 1, 'D51QMyTmM5Ziu42CJR7l529Z4CWpKdBj', '2019-02-05 11:11:27', '2019-02-05 11:11:27'),
+	(10, 1, 'uTMP5bIWAmyyugOdUQ7YBdewnNS2Ln9M', '2019-02-05 11:15:43', '2019-02-05 11:15:43'),
+	(11, 1, 'xbualJxG5JcHgq6qjNEzmCjPzyZD5VGA', '2019-02-06 10:54:15', '2019-02-06 10:54:15'),
+	(12, 1, '29L82ALtzGIhXfadwUnEZOEJW24Bbjbe', '2019-04-10 15:40:51', '2019-04-10 15:40:51'),
+	(13, 1, 'hJlq7fiZNby8HZ4D4qXzWx0nHIN2nT9Z', '2019-04-15 16:37:11', '2019-04-15 16:37:11'),
+	(14, 1, '9UafFwXYJSqSnGkvpeFZXzBfJLXmzbXN', '2019-04-18 13:47:01', '2019-04-18 13:47:01'),
+	(15, 1, '6BG8aYYUkXGEfNzRPf1RZjtJzXZ633k0', '2019-04-18 14:12:45', '2019-04-18 14:12:45'),
+	(16, 1, 'Y0ZV5pECfPHKyiFqdZeP2tfFKkwn1Pcp', '2019-04-22 14:38:49', '2019-04-22 14:38:49'),
+	(17, 1, 'MQIFIv0c9zX5D7WAMZbOgkAO1C9DWkrD', '2019-04-25 17:24:19', '2019-04-25 17:24:19'),
+	(18, 1, '52RRLiznJHLQcPZ2bsSjHMbjvhvy4JpD', '2019-04-26 15:57:36', '2019-04-26 15:57:36'),
+	(19, 1, '6nWSZJBQjWcFaO6H9ryGOeuF15MdCi8U', '2019-05-02 08:40:02', '2019-05-02 08:40:02'),
+	(20, 1, '9HDmdVw9KRhL87vgzhv0BoRuly4sVdGY', '2019-05-06 07:23:23', '2019-05-06 07:23:23'),
+	(21, 1, 'FhWWOSDSCz1XFBzh2DusdTtCmPNXH1Y8', '2019-05-08 16:31:26', '2019-05-08 16:31:26'),
+	(22, 1, 'l5LnOE3wEHqCG04OH8CdEmF0uMPb46H5', '2019-05-14 16:12:16', '2019-05-14 16:12:16'),
+	(23, 1, 'EeoAr64nmg24soAPtB6pDkh9c6dZLHXf', '2019-05-14 16:12:41', '2019-05-14 16:12:41'),
+	(24, 1, 'VY8YwmWRwKlZzbGEsOXaHhezw7aULAMQ', '2019-05-15 07:58:40', '2019-05-15 07:58:40'),
+	(25, 1, 'xVVcsDTemj5rXoR3Whu11ZUy1p0lCeJ4', '2019-05-23 05:22:30', '2019-05-23 05:22:30'),
+	(26, 1, 'iJPQyzcfc1bQLkBORodbrIqXSrPBmJ66', '2019-05-23 10:18:03', '2019-05-23 10:18:03'),
+	(27, 1, '8I9ENYEwzXCJb9HD36yU5xVhfZZea7j0', '2019-05-23 11:58:21', '2019-05-23 11:58:21'),
+	(28, 1, 'LoEinXRT47XyP8nxCkq2Lf5DEX1RdFaV', '2019-06-09 19:27:26', '2019-06-09 19:27:26'),
+	(29, 1, 'HaY9Zpfa0osVu6UbIPnt86OPCztJwWBo', '2019-06-17 11:59:35', '2019-06-17 11:59:35'),
+	(30, 1, 'TatIVZ6n0sKSDn9tZK0YURlbTQ1LWOHo', '2019-06-24 11:04:18', '2019-06-24 11:04:18'),
+	(31, 1, 'GxIMG61HpSh22h5K8jvOcPYjV1U6Cs45', '2019-08-29 10:44:09', '2019-08-29 10:44:09'),
+	(32, 1, 'WcryoH2DB1e3nkTe9uQWipnYBjAz29W6', '2019-09-06 09:24:49', '2019-09-06 09:24:49'),
+	(33, 1, '7zi2MZfhNMMAyFDJcvvhZV4deyll9ZTQ', '2019-09-10 15:16:22', '2019-09-10 15:16:22'),
+	(34, 1, 'OvviKV1w9m9XZlY5bv5xUSgenloyF1di', '2019-09-10 18:30:04', '2019-09-10 18:30:04'),
+	(35, 1, 'sX4gYGcrHEKytuLHuPgTWyJRKnmph2Jm', '2019-09-18 07:19:16', '2019-09-18 07:19:16'),
+	(36, 1, '2qhzztNIkDMfDYaGJZAeI3DcWWSkrtzW', '2019-09-19 10:40:09', '2019-09-19 10:40:09'),
+	(37, 1, 'iSHBTf2unNPv1Ft5gFJzCj1Fd8A7TfBi', '2019-10-04 07:48:00', '2019-10-04 07:48:00'),
+	(38, 1, 'iGtYUsBKsqYIN979PeL0UrBRl7Gkbdon', '2019-10-04 13:08:14', '2019-10-04 13:08:14'),
+	(39, 1, 'xruweaTYCHeUIZ1UU0x7z1IHQOGGZc3R', '2019-10-04 13:12:41', '2019-10-04 13:12:41'),
+	(41, 1, 'wK0ow2zEEyURHzuHlRb4ipWk7bqf8wJA', '2019-10-04 13:44:12', '2019-10-04 13:44:12'),
+	(42, 1, 'uTNbcP3CtNarrxHhMlAwO7u4VNZy0agT', '2019-10-07 06:03:15', '2019-10-07 06:03:15'),
+	(44, 1, 'Bs9QTataplNRqpp0MORrouTcUFobHcGQ', '2019-10-07 13:17:08', '2019-10-07 13:17:08'),
+	(45, 1, 'u8R84uU8mTi0anHygIGXZ37sdByZUUYH', '2019-10-08 09:04:36', '2019-10-08 09:04:36'),
+	(46, 1, 'PGi883qdpWUNwj7sFz0VMrEdPjGn2X8f', '2019-10-08 10:08:59', '2019-10-08 10:08:59'),
+	(47, 1, 'tTIOCDjTuG5vKBrvef0sMPtUr40fi0M5', '2019-10-08 12:13:20', '2019-10-08 12:13:20'),
+	(48, 1, 'KzbwFk7BcINwPloOUGE40yIDXRmiV6Rm', '2019-10-08 19:07:27', '2019-10-08 19:07:27'),
+	(49, 1, 'tPdrd3TVpDIR5xnV04MG33kh7VLOEnON', '2019-10-09 08:13:55', '2019-10-09 08:13:55'),
+	(50, 1, 'PClnTJzOr7hMUSNc7hxKofOFIGqcCzvA', '2019-10-09 08:13:55', '2019-10-09 08:13:55'),
+	(51, 1, '39KACpgwAOg96hSLgALeYVAukVxtcrJN', '2019-10-09 10:57:26', '2019-10-09 10:57:26'),
+	(52, 1, 'Jczwg3yXPkRlOkg6iV3INhlbHl4Ck8o6', '2019-10-10 06:21:26', '2019-10-10 06:21:26'),
+	(53, 1, 'AKqiqY1EJ1g8ljYvDKKMI3yUjVezAxEo', '2019-10-10 18:47:22', '2019-10-10 18:47:22'),
+	(54, 1, 'gVi4OsW1Q12LarmoCsv2TXrMOSseNsZP', '2019-10-11 05:05:19', '2019-10-11 05:05:19'),
+	(55, 1, '5vwxT8928ISwJOZq4Kkiy7kusNZ6ZUKc', '2019-10-11 20:12:59', '2019-10-11 20:12:59');
+/*!40000 ALTER TABLE `persistences` ENABLE KEYS */;
+
+
+-- Dumping structure for table uotcareers_db.photoables
+CREATE TABLE IF NOT EXISTS `photoables` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `photo_id` int(11) NOT NULL,
+  `photoable_id` int(11) NOT NULL,
+  `photoable_type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Dumping data for table uotcareers_db.photoables: ~4 rows (approximately)
+/*!40000 ALTER TABLE `photoables` DISABLE KEYS */;
+INSERT INTO `photoables` (`id`, `photo_id`, `photoable_id`, `photoable_type`, `created_at`, `updated_at`) VALUES
+	(1, 2, 1, 'Modules\\Albums\\Entities\\Album', NULL, NULL),
+	(2, 3, 1, 'Modules\\Albums\\Entities\\Album', NULL, NULL),
+	(3, 4, 1, 'Modules\\Albums\\Entities\\Album', NULL, NULL),
+	(4, 6, 2, 'Modules\\Albums\\Entities\\Album', NULL, NULL);
+/*!40000 ALTER TABLE `photoables` ENABLE KEYS */;
+
+
+-- Dumping structure for table uotcareers_db.photos
+CREATE TABLE IF NOT EXISTS `photos` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` tinyint(1) NOT NULL DEFAULT 1,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Dumping data for table uotcareers_db.photos: ~6 rows (approximately)
+/*!40000 ALTER TABLE `photos` DISABLE KEYS */;
+INSERT INTO `photos` (`id`, `image`, `description`, `status`, `created_at`, `updated_at`) VALUES
+	(1, 'message-2_1.jpg', NULL, 1, '2019-10-09 12:36:59', '2019-10-09 12:37:00'),
+	(2, 'banner.jpg', NULL, 1, '2019-10-09 12:37:50', '2019-10-09 12:37:50'),
+	(3, 'section-1.jpg', NULL, 1, '2019-10-09 12:38:06', '2019-10-09 12:38:06'),
+	(4, 'section-1_1.jpg', NULL, 1, '2019-10-09 12:39:18', '2019-10-09 12:39:18'),
+	(5, 'message-1_6.jpg', NULL, 1, '2019-10-09 12:50:10', '2019-10-09 12:50:10'),
+	(6, 'message-2_2.jpg', NULL, 1, '2019-10-09 12:53:31', '2019-10-09 12:53:31');
+/*!40000 ALTER TABLE `photos` ENABLE KEYS */;
+
+
+-- Dumping structure for table uotcareers_db.reminders
+CREATE TABLE IF NOT EXISTS `reminders` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `user_id` int(10) unsigned NOT NULL,
+  `code` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `completed` tinyint(1) NOT NULL DEFAULT 0,
+  `completed_at` timestamp NULL DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Dumping data for table uotcareers_db.reminders: ~0 rows (approximately)
+/*!40000 ALTER TABLE `reminders` DISABLE KEYS */;
+/*!40000 ALTER TABLE `reminders` ENABLE KEYS */;
+
+
+-- Dumping structure for table uotcareers_db.roles
+CREATE TABLE IF NOT EXISTS `roles` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `slug` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `permissions` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Dumping data for table uotcareers_db.roles: ~3 rows (approximately)
+/*!40000 ALTER TABLE `roles` DISABLE KEYS */;
+INSERT INTO `roles` (`id`, `slug`, `name`, `permissions`, `created_at`, `updated_at`) VALUES
+	(1, 'admin', 'Admin', '{"albums.index":true,"albums.create":true,"albums.store":true,"albums.edit":true,"albums.update":true,"albums.destroy":true,"banners.index":true,"banners.create":true,"banners.store":true,"banners.edit":true,"banners.update":true,"banners.destroy":true,"blocks.index":true,"blocks.create":true,"blocks.store":true,"blocks.edit":true,"blocks.update":true,"blocks.destroy":true,"categories.index":true,"categories.create":true,"categories.store":true,"categories.edit":true,"categories.update":true,"categories.destroy":true,"courses.index":true,"courses.create":true,"courses.store":true,"courses.edit":true,"courses.update":true,"courses.destroy":true,"courses.show":true,"dashboard.index":true,"events.index":true,"events.create":true,"events.store":true,"events.edit":true,"events.update":true,"events.destroy":true,"faqs.index":true,"faqs.create":true,"faqs.store":true,"faqs.edit":true,"faqs.update":true,"faqs.destroy":true,"history.index":true,"menus.index":true,"menus.create":true,"menus.store":true,"menus.edit":true,"menus.update":true,"menus.destroy":true,"menus.menu_links.index":true,"menus.menu_links.create":true,"menus.menu_links.store":true,"menus.menu_links.edit":true,"menus.menu_links.update":true,"menus.menu_links.destroy":true,"pages.index":true,"pages.create":true,"pages.store":true,"pages.edit":true,"pages.update":true,"pages.destroy":true,"partners.index":true,"partners.create":true,"partners.store":true,"partners.edit":true,"partners.update":true,"partners.destroy":false,"photos.index":false,"photos.create":false,"photos.store":false,"photos.edit":false,"photos.update":false,"photos.destroy":false,"settings.index":true,"settings.store":true,"testimonials.index":true,"testimonials.create":true,"testimonials.store":true,"testimonials.edit":true,"testimonials.update":true,"testimonials.destroy":true,"users.index":true,"users.create":true,"users.store":true,"users.edit":true,"users.update":true,"users.destroy":true,"users.roles.index":true,"users.roles.create":true,"users.roles.store":true,"users.roles.edit":true,"users.roles.update":true,"users.roles.destroy":true}', '2019-01-20 19:03:32', '2019-10-11 07:00:00'),
+	(2, 'user', 'User', NULL, '2019-01-20 19:03:32', '2019-01-20 19:03:32'),
+	(4, 'test', 'test', '', '2019-10-07 12:05:53', '2019-10-07 12:05:53');
+/*!40000 ALTER TABLE `roles` ENABLE KEYS */;
+
+
+-- Dumping structure for table uotcareers_db.role_users
+CREATE TABLE IF NOT EXISTS `role_users` (
+  `user_id` int(10) unsigned NOT NULL,
+  `role_id` int(10) unsigned NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`user_id`,`role_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Dumping data for table uotcareers_db.role_users: ~2 rows (approximately)
+/*!40000 ALTER TABLE `role_users` DISABLE KEYS */;
+INSERT INTO `role_users` (`user_id`, `role_id`, `created_at`, `updated_at`) VALUES
+	(1, 1, '2019-01-20 19:03:33', '2019-01-20 19:03:33'),
+	(2, 1, '2019-09-18 09:48:13', '2019-09-18 09:48:13');
+/*!40000 ALTER TABLE `role_users` ENABLE KEYS */;
+
+
+-- Dumping structure for table uotcareers_db.settings
+CREATE TABLE IF NOT EXISTS `settings` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `key_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `value` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Dumping data for table uotcareers_db.settings: ~40 rows (approximately)
+/*!40000 ALTER TABLE `settings` DISABLE KEYS */;
+INSERT INTO `settings` (`id`, `key_name`, `value`, `created_at`, `updated_at`) VALUES
+	(1, 'test_email', 'info.uotcareer.com', '2019-02-01 11:32:15', '2019-10-10 19:58:02'),
+	(2, 'mail_driver', 'log', '2019-02-01 11:32:16', '2019-02-01 11:32:16'),
+	(3, 'mail_from_name', 'Pollit Anayltics', '2019-02-01 11:32:16', '2019-02-01 15:53:22'),
+	(4, 'mail_from_address', 'info@pollitanalytics.com', '2019-02-01 11:32:16', '2019-06-24 11:04:35'),
+	(5, 'mail_host', 'smtp.mailgun.org', '2019-02-01 11:32:16', '2019-02-01 11:32:16'),
+	(6, 'mail_port', '587', '2019-02-01 11:32:16', '2019-02-01 11:32:16'),
+	(7, 'mail_username', 'test@admin.com', '2019-02-01 11:32:16', '2019-02-01 11:32:16'),
+	(8, 'mail_password', 'admin', '2019-02-01 11:32:16', '2019-02-01 11:32:16'),
+	(9, 'mail_encryption', 'tls', '2019-02-01 11:32:16', '2019-02-01 11:32:16'),
+	(10, 'mailgun_domain', NULL, '2019-02-01 11:32:16', '2019-02-01 11:32:16'),
+	(11, 'mailgun_secret', NULL, '2019-02-01 11:32:16', '2019-02-01 11:32:16'),
+	(12, 'website_title', 'UOT Careers', '2019-02-01 11:32:17', '2019-10-10 20:06:24'),
+	(13, 'app_name', 'UOTCAREERS CMS', '2019-02-01 11:32:17', '2019-10-10 20:06:24'),
+	(14, 'webmaster_email', NULL, '2019-02-01 11:32:17', '2019-02-01 11:32:17'),
+	(15, 'contact_email', 'info.uotcareer.com', '2019-02-01 11:32:17', '2019-10-10 19:09:56'),
+	(16, 'phone', 'info.uotcareer.com', '2019-02-01 11:32:17', '2019-10-10 19:09:56'),
+	(17, 'address', '1334 Brittmoore Rd, Houston, TX 77043', '2019-02-01 11:32:17', '2019-10-10 19:09:56'),
+	(18, '_wysihtml5_mode', '1', '2019-02-01 11:32:17', '2019-02-01 11:32:17'),
+	(19, 'welcome_message', NULL, '2019-02-01 11:32:17', '2019-02-01 11:32:17'),
+	(20, 'google_analytics', NULL, '2019-02-01 11:32:17', '2019-02-01 11:32:17'),
+	(21, 'map', NULL, '2019-02-01 11:32:17', '2019-02-01 11:32:17'),
+	(22, 'website_description', NULL, '2019-02-01 11:32:17', '2019-02-01 11:32:17'),
+	(23, 'website_keywords', NULL, '2019-02-01 11:32:17', '2019-02-01 11:32:17'),
+	(24, 'image', 'logo-word.jpg', '2019-02-01 11:32:18', '2019-10-10 19:03:46'),
+	(25, 'facebook', 'https://www.facebook.com/PollitAnalytics/', '2019-02-01 15:53:22', '2019-04-10 16:41:47'),
+	(26, 'facebook_plugin', '<iframe src="https://www.facebook.com/plugins/page.php?href=http://www.facebook.com/PollitAnalytics&tabs=timeline&width=340&height=400&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true"\r\n                                            height="400" style="border:none;overflow:hidden;width: 350px" scrolling="no"\r\n                                            frameborder="0" allowTransparency="true"></iframe>', '2019-02-01 15:53:22', '2019-04-15 17:45:19'),
+	(27, 'twitter', 'https://twitter.com/PollitAnalytics', '2019-02-01 15:53:22', '2019-02-01 16:07:54'),
+	(28, 'twitter_plugin', '<a class="twitter-timeline"  href="https://twitter.com/PollitAnalytics" data-widget-id="616165029868646400"  data-chrome="noheader nofooter noborders transparent " data-height="350"></a>\r\n            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?\'http\':\'https\';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>', '2019-02-01 15:53:22', '2019-06-24 11:04:34'),
+	(29, 'instagram', 'https://www.instagram.com/pollitanalytics/', '2019-02-01 15:53:22', '2019-04-10 16:41:47'),
+	(30, 'instagram_plugin', NULL, '2019-02-01 15:53:22', '2019-02-01 15:53:22'),
+	(31, 'rent_space_email', NULL, '2019-02-01 15:53:23', '2019-02-01 15:53:23'),
+	(32, 'linkedin', 'https://www.linkedin.com/company/pollitanalytics', '2019-02-01 15:53:23', '2019-04-10 16:41:47'),
+	(33, 'google', NULL, '2019-02-01 15:53:23', '2019-02-01 15:53:23'),
+	(34, 'linkedin_plugin', NULL, '2019-04-10 16:41:47', '2019-04-10 16:41:47'),
+	(35, 'tawk_plugin', NULL, '2019-04-18 13:50:39', '2019-10-10 19:03:45'),
+	(36, 'office_hours', 'Monday - Friday :  8:00AM - 5PM', '2019-05-23 06:02:12', '2019-05-23 06:02:12'),
+	(37, 'paystack_secret_key', NULL, '2019-10-07 12:35:55', '2019-10-07 12:35:55'),
+	(38, 'paystack_public_key', NULL, '2019-10-07 12:35:55', '2019-10-07 12:35:55'),
+	(39, 'newsletter_msg', 'Don\'t miss to  subscribe to our news feed, Get the latest updates from us!', '2019-10-08 19:30:32', '2019-10-10 19:58:36'),
+	(40, 'footer_about_msg', 'We offer full pack IT career services for specific core areas such as IT Audit/Risk compliance, Cybersecurity, Digital BA, Agile scrum, General BA & ERP BA.', '2019-10-08 19:30:33', '2019-10-10 20:04:45');
+/*!40000 ALTER TABLE `settings` ENABLE KEYS */;
+
+
+-- Dumping structure for table uotcareers_db.testimonials
+CREATE TABLE IF NOT EXISTS `testimonials` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `slug` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `body` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` tinyint(1) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Dumping data for table uotcareers_db.testimonials: ~2 rows (approximately)
+/*!40000 ALTER TABLE `testimonials` DISABLE KEYS */;
+INSERT INTO `testimonials` (`id`, `slug`, `title`, `name`, `image`, `body`, `status`, `created_at`, `updated_at`) VALUES
+	(1, NULL, NULL, 'John Doe', 'testimonial2.jpg', '<p>Nulla cursus a metus vel placerat. Fusce malesuada volutpat pretium. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus velit libero, viverra quis euismod vel pellentesque at tortor. Donec</p>', 1, '2019-10-10 08:23:57', '2019-10-11 20:20:03'),
+	(2, NULL, NULL, 'Janet Smith', 'testimonial4.jpg', '<p>Nulla cursus a metus vel placerat. Fusce malesuada volutpat pretium. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus velit libero, viverra quis euismod vel pellentesque at tortor. Donec</p>', 1, '2019-10-10 08:23:57', '2019-10-11 20:19:48');
+/*!40000 ALTER TABLE `testimonials` ENABLE KEYS */;
+
+
+-- Dumping structure for table uotcareers_db.throttle
+CREATE TABLE IF NOT EXISTS `throttle` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `user_id` int(10) unsigned DEFAULT NULL,
+  `type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `ip` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `throttle_user_id_index` (`user_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Dumping data for table uotcareers_db.throttle: ~39 rows (approximately)
+/*!40000 ALTER TABLE `throttle` DISABLE KEYS */;
+INSERT INTO `throttle` (`id`, `user_id`, `type`, `ip`, `created_at`, `updated_at`) VALUES
+	(1, NULL, 'global', NULL, '2019-02-05 08:28:50', '2019-02-05 08:28:50'),
+	(2, NULL, 'ip', '197.149.93.190', '2019-02-05 08:28:50', '2019-02-05 08:28:50'),
+	(3, NULL, 'global', NULL, '2019-02-05 08:29:22', '2019-02-05 08:29:22'),
+	(4, NULL, 'ip', '197.149.93.190', '2019-02-05 08:29:22', '2019-02-05 08:29:22'),
+	(5, NULL, 'global', NULL, '2019-02-05 08:30:08', '2019-02-05 08:30:08'),
+	(6, NULL, 'ip', '197.149.93.190', '2019-02-05 08:30:08', '2019-02-05 08:30:08'),
+	(7, NULL, 'global', NULL, '2019-02-05 08:30:26', '2019-02-05 08:30:26'),
+	(8, NULL, 'ip', '197.149.93.190', '2019-02-05 08:30:26', '2019-02-05 08:30:26'),
+	(9, NULL, 'global', NULL, '2019-02-05 08:30:53', '2019-02-05 08:30:53'),
+	(10, NULL, 'ip', '197.149.93.190', '2019-02-05 08:30:53', '2019-02-05 08:30:53'),
+	(11, NULL, 'global', NULL, '2019-02-05 08:31:44', '2019-02-05 08:31:44'),
+	(12, NULL, 'ip', '197.149.93.190', '2019-02-05 08:31:44', '2019-02-05 08:31:44'),
+	(13, NULL, 'global', NULL, '2019-02-05 09:10:44', '2019-02-05 09:10:44'),
+	(14, NULL, 'ip', '197.149.93.190', '2019-02-05 09:10:44', '2019-02-05 09:10:44'),
+	(15, NULL, 'global', NULL, '2019-04-10 15:40:36', '2019-04-10 15:40:36'),
+	(16, NULL, 'ip', '41.58.56.210', '2019-04-10 15:40:36', '2019-04-10 15:40:36'),
+	(17, NULL, 'global', NULL, '2019-04-10 15:40:45', '2019-04-10 15:40:45'),
+	(18, NULL, 'ip', '41.58.56.210', '2019-04-10 15:40:45', '2019-04-10 15:40:45'),
+	(19, NULL, 'global', NULL, '2019-04-10 15:50:09', '2019-04-10 15:50:09'),
+	(20, NULL, 'ip', '41.58.56.210', '2019-04-10 15:50:09', '2019-04-10 15:50:09'),
+	(21, NULL, 'global', NULL, '2019-05-06 07:22:42', '2019-05-06 07:22:42'),
+	(22, NULL, 'ip', '197.149.93.190', '2019-05-06 07:22:42', '2019-05-06 07:22:42'),
+	(23, 1, 'user', NULL, '2019-05-06 07:22:42', '2019-05-06 07:22:42'),
+	(24, NULL, 'global', NULL, '2019-05-23 05:21:11', '2019-05-23 05:21:11'),
+	(25, NULL, 'ip', '41.58.89.204', '2019-05-23 05:21:11', '2019-05-23 05:21:11'),
+	(26, NULL, 'global', NULL, '2019-05-23 05:21:31', '2019-05-23 05:21:31'),
+	(27, NULL, 'ip', '41.58.89.204', '2019-05-23 05:21:31', '2019-05-23 05:21:31'),
+	(28, NULL, 'global', NULL, '2019-10-04 12:52:58', '2019-10-04 12:52:58'),
+	(29, NULL, 'ip', '127.0.0.1', '2019-10-04 12:52:58', '2019-10-04 12:52:58'),
+	(30, 1, 'user', NULL, '2019-10-04 12:52:58', '2019-10-04 12:52:58'),
+	(31, NULL, 'global', NULL, '2019-10-04 12:54:31', '2019-10-04 12:54:31'),
+	(32, NULL, 'ip', '127.0.0.1', '2019-10-04 12:54:31', '2019-10-04 12:54:31'),
+	(33, 1, 'user', NULL, '2019-10-04 12:54:31', '2019-10-04 12:54:31'),
+	(34, NULL, 'global', NULL, '2019-10-04 13:08:33', '2019-10-04 13:08:33'),
+	(35, NULL, 'ip', '127.0.0.1', '2019-10-04 13:08:33', '2019-10-04 13:08:33'),
+	(36, 1, 'user', NULL, '2019-10-04 13:08:33', '2019-10-04 13:08:33'),
+	(37, NULL, 'global', NULL, '2019-10-04 13:12:56', '2019-10-04 13:12:56'),
+	(38, NULL, 'ip', '127.0.0.1', '2019-10-04 13:12:56', '2019-10-04 13:12:56'),
+	(39, 1, 'user', NULL, '2019-10-04 13:12:56', '2019-10-04 13:12:56');
+/*!40000 ALTER TABLE `throttle` ENABLE KEYS */;
+
+
+-- Dumping structure for table uotcareers_db.users
+CREATE TABLE IF NOT EXISTS `users` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `username` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `permissions` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `last_login` timestamp NULL DEFAULT NULL,
+  `first_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `last_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `is_first_login` tinyint(1) DEFAULT 0,
+  `phone` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `address` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `avatar` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `state_id` int(11) DEFAULT NULL,
+  `city_id` int(11) DEFAULT NULL,
+  `age` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `gender` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Dumping data for table uotcareers_db.users: ~3 rows (approximately)
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` (`id`, `email`, `username`, `password`, `permissions`, `last_login`, `first_name`, `last_name`, `created_at`, `updated_at`, `is_first_login`, `phone`, `address`, `avatar`, `state_id`, `city_id`, `age`, `gender`) VALUES
+	(1, 'test@admin.com', 'admin', '$2y$10$UidwtAlmf/1aJlznhXjKPe/Ddms5018I/xvqGo6.hMkkdUVmR75/K', NULL, '2019-10-11 20:13:00', 'Digital', 'Edge', '2019-01-20 19:03:32', '2019-10-11 20:13:00', 0, NULL, NULL, NULL, NULL, NULL, '', ''),
+	(2, 'ade@123.com', NULL, '$2y$10$HP7VrtlOC5L17Ilaxx1hceNvxsYe1hIO.B7XPePkfnvP7aIwI8mFO', '', NULL, 'Adedolapo', 'Oduguwa', '2019-09-18 09:48:13', '2019-09-18 09:48:13', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+	(3, 'test@123.com', NULL, '$2y$10$Ik/SQ4hkvfYSYQYjtJm2e.H/gK9M6hsKP4Xp0SiTdtbY1GSkSMrsa', '', NULL, 'Adedolapo', 'adedolapo', '2019-10-07 11:48:06', '2019-10-07 11:48:06', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
+/*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
+/*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

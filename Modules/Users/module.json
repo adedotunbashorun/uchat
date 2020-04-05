@@ -1,0 +1,24 @@
+{
+    "name": "Users",
+    "alias": "users",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "Modules\\Users\\Providers\\UsersServiceProvider",
+        "Modules\\Users\\Providers\\EventServiceProvider",
+        "Cartalyst\\Sentinel\\Laravel\\SentinelServiceProvider"
+    ],
+    "aliases": {
+        "Sentinel": "Cartalyst\\Sentinel\\Laravel\\Facades\\Sentinel",
+        "Sentry": "Cartalyst\\Sentry\\Facades\\Laravel\\Sentry",
+        "Activation": "Cartalyst\\Sentinel\\Laravel\\Facades\\Activation",
+        "Reminder": "Cartalyst\\Sentinel\\Laravel\\Facades\\Reminder"
+    },
+    "files": [
+        "start.php",
+        "composers.php",
+        "helpers.php"
+    ]
+}
